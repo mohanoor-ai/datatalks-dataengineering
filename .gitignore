@@ -16,3 +16,4 @@ ny_taxi_postgres_data/
 
 # pgAdmin data (if you added a volume for it)
 pgadmin_data/week_1_docker_sql/*.csv.gz
+*.json

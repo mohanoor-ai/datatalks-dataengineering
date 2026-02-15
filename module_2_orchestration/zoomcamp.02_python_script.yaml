@@ -1,0 +1,24 @@
+id: 02_python_script
+namespace: zoomcamp
+
+# INPUTS: These are variables you can change every time you hit 'Execute'
+inputs:
+  - id: name
+    type: STRING
+    defaults: "learner"
+
+tasks:
+  - id: print_message
+    type: io.kestra.plugin.core.log.Log
+    # The double curly braces {{ }} tell Kestra to look at the inputs provided
+    message: "Starting the python script for {{ inputs.name }}..."
+
+  - id: python_task
+    type: io.kestra.plugin.scripts.python.Script
+    # This 'containerImage' tells Kestra to use a mini-computer that already has Python installed
+    containerImage: python:3.11-slim
+    script: |
+      import platform
+      # This Python code simply prints information about the system it is running on
+      print(f"Hello {{ inputs.name }}!")
+      print(f"This script is running on {platform.system()} {platform.release()}")

@@ -1,0 +1,31 @@
+id: 06_gcp_kv
+namespace: zoomcamp
+
+tasks:
+  - id: gcp_project_id
+    type: io.kestra.plugin.core.kv.Set
+    key: GCP_PROJECT_ID
+    kvType: STRING
+    value: dataeng-proj-487214 # Updated with your ID
+
+  - id: gcp_location
+    type: io.kestra.plugin.core.kv.Set
+    key: GCP_LOCATION
+    kvType: STRING
+    value: us-central1 # You can use us-central1 or europe-west2 (just be consistent)
+
+  - id: gcp_bucket_name
+    type: io.kestra.plugin.core.kv.Set
+    key: GCP_BUCKET_NAME
+    kvType: STRING
+    value: kestra-zoomcamp-dataeng-proj-487214 # I made this unique for you!
+
+  - id: gcp_dataset
+    type: io.kestra.plugin.core.kv.Set
+    key: GCP_DATASET
+    kvType: STRING
+    value: zoomcamp
+
+# NOTES:
+# 1. Running this flow doesn't move data; it just saves "Settings" into Kestra.
+# 2. These values will be used by the NEXT flows (like the BigQuery one).

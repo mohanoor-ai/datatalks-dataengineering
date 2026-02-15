@@ -1,0 +1,103 @@
+# VOLUMES: These are like external hard drives. 
+# They ensure that if you turn off your laptop, your data isn't deleted.
+volumes:
+  ny_taxi_postgres_data:   # Stores the actual taxi trip data
+    driver: local
+  kestra_postgres_data:    # Stores Kestra's internal settings/history
+    driver: local
+  kestra_data:             # Stores files Kestra downloads (like the CSVs)
+    driver: local
+  kestra_tmp:              # Temporary workspace for Kestra to move files
+    driver: local
+
+services:
+  # 1. PG-DATABASE: This is the "Warehouse."
+  # It stores the millions of rows of taxi data you will analyze.
+  pgdatabase:
+    image: postgres:18
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: ny_taxi
+    ports:
+      - "5432:5432"        # Connects your laptop's port 5432 to the database
+    volumes:
+      - ny_taxi_postgres_data:/var/lib/postgresql
+    depends_on:
+      kestra:              # 2026 rule: Wait for Kestra to start before this opens
+        condition: service_started
+
+  # 2. PGADMIN: This is the "Window" into the warehouse.
+  # It gives you a website to look at your tables and run SQL queries.
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@admin.com
+      - PGADMIN_DEFAULT_PASSWORD=root
+    ports:
+      - "8085:80"          # You will visit http://localhost:8085 to see this
+    depends_on:
+      pgdatabase:
+        condition: service_started
+
+  # 3. KESTRA_POSTGRES: The "Brain's Memory."
+  # Kestra needs its own private database to remember your flows and logs.
+  kestra_postgres:
+    image: postgres:18
+    volumes:
+      - kestra_postgres_data:/var/lib/postgresql
+    environment:
+      POSTGRES_DB: kestra
+      POSTGRES_USER: kestra
+      POSTGRES_PASSWORD: k3str4
+    healthcheck:           # This checks every 30s to make sure the database is healthy
+      test: ["CMD-SHELL", "pg_isready -d $${POSTGRES_DB} -U $${POSTGRES_USER}"]
+      interval: 30s
+      timeout: 10s
+      retries: 10
+
+  # 4. KESTRA: The "Manager" (Orchestrator).
+  # This is the main tool. It follows your instructions to download data and move it.
+  kestra:
+    image: kestra/kestra:v1.1
+    pull_policy: always
+    user: "root"
+    command: server standalone
+    volumes:
+      - kestra_data:/app/storage
+      - /var/run/docker.sock:/var/run/docker.sock
+      - kestra_tmp:/tmp/kestra-wd
+    env_file:
+      - .env_encooded
+    environment:
+      KESTRA_CONFIGURATION: |
+        # Tells Kestra how to talk to its internal memory (kestra_postgres)
+        datasources:
+          postgres:
+            url: jdbc:postgresql://kestra_postgres:5432/kestra
+            driverClassName: org.postgresql.Driver
+            username: kestra
+            password: k3str4
+        kestra:
+          server:
+            basicAuth:      # Sets the login for the website
+              username: "admin@kestra.io"
+              password: Admin1234!
+          repository:
+            type: postgres
+          storage:
+            type: local
+            local:
+              basePath: "/app/storage"
+          queue:
+            type: postgres
+          tasks:
+            tmpDir:
+              path: /tmp/kestra-wd/tmp
+          url: http://localhost:8080/
+    ports:
+      - "8080:8080"        # The main Kestra website: http://localhost:8080
+      - "8081:8081"
+    depends_on:
+      kestra_postgres:
+        condition: service_started

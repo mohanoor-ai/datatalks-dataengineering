@@ -1,0 +1,12 @@
+id: 01_getting_started
+namespace: zoomcamp
+
+inputs:
+  - id: user
+    type: STRING
+    defaults: "DataTalksClub"
+
+tasks:
+  - id: hello_world
+    type: io.kestra.plugin.core.log.Log
+    message: "Hello {{ inputs.user }}!"

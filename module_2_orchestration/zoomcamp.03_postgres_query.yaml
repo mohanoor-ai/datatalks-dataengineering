@@ -1,0 +1,40 @@
+id: 03_postgres_query
+namespace: zoomcamp
+
+tasks:
+  - id: create_table
+    type: io.kestra.plugin.jdbc.postgresql.Query
+    # This URL uses the service name 'pgdatabase' from our docker-compose file
+    url: jdbc:postgresql://pgdatabase:5432/ny_taxi
+    username: root
+    password: root
+    # This SQL command creates a simple test table if it doesn't exist yet
+    sql: |
+      CREATE TABLE IF NOT EXISTS test_table (
+          id SERIAL PRIMARY KEY,
+          name VARCHAR(50)
+      );
+      
+  - id: insert_data
+    type: io.kestra.plugin.jdbc.postgresql.Query
+    url: jdbc:postgresql://pgdatabase:5432/ny_taxi
+    username: root
+    password: root
+    # This adds a row to our new table
+    sql: |
+      INSERT INTO test_table (name) VALUES ('Kestra is connected!');
+
+  - id: select_data
+    type: io.kestra.plugin.jdbc.postgresql.Query
+    url: jdbc:postgresql://pgdatabase:5432/ny_taxi
+    username: root
+    password: root
+    # fetchOne: true means Kestra will grab the result and show it in the UI
+    sql: |
+      SELECT * FROM test_table ORDER BY id DESC LIMIT 1;
+    fetchOne: true
+
+# NOTES:
+# 1. 'pgdatabase' is the host name because they are in the same Docker network.
+# 2. '5432' is the internal port for Postgres.
+# 3. 'ny_taxi' is the database name we defined in the environment section of docker-compose.
