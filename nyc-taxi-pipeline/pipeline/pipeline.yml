@@ -1,0 +1,32 @@
+# Bruin Pipeline Definition
+# Project: nyc-taxi
+# Environment: nyc-taxi
+
+name: nyc_taxi
+
+assets:
+  # 1. Ingest Payment Lookup
+  - name: ingestion.payment_lookup
+    type: python
+    executable: assets/ingestion/payment_lookup.py
+
+  # 2. Ingest Trips
+  - name: ingestion.trips
+    type: python
+    executable: assets/ingestion/trips.py
+    depends:
+      - name: ingestion.payment_lookup # Fixed: Added the 'name' key
+
+  # 3. Staging Trips
+  - name: staging.trips
+    type: duckdb.sql
+    executable: assets/staging/trips.sql
+    depends:
+      - name: ingestion.trips # Fixed: Added the 'name' key
+
+  # 4. Final Report
+  - name: reports.trips_report
+    type: duckdb.sql
+    executable: assets/reports/trips_report.sql
+    depends:
+      - name: staging.trips # Fixed: Added the 'name' key
