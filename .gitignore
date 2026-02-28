@@ -30,3 +30,12 @@ logs/queries
 *.ipynb
 uv.env/
 uv.lock
+# Ignore Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Ignore Bruin internal metadata
+.bruin/
+
+# Ignore Python virtual environments
+.venv/
+.uv/
