@@ -28,3 +28,5 @@ logs/queries
 *.duckdb.*
 *.ipynb_checkpoints
 *.ipynb
+uv.env/
+uv.lock
