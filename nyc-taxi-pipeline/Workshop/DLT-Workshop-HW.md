@@ -23,6 +23,7 @@ In this workshop, I implemented a data ingestion pipeline using **dlt** (Data Lo
 * 16.66%
 * **26.66%**
 * 36.66%
+
 * 46.66%
 
 > **Verification SQL:**
