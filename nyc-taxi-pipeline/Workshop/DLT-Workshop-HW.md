@@ -7,8 +7,8 @@ In this workshop, I implemented a data ingestion pipeline using **dlt** (Data Lo
 ### Question 1. What is the start date and end date of the dataset? (1 point)
 
 * 2009-01-01 to 2009-01-31
-* 2009-06-01 to 2009-07-01
-* **2024-01-01 to 2024-02-01**
+* **2009-06-01 to 2009-07-01**
+* 2024-01-01 to 2024-02-01**
 * 2024-06-01 to 2024-07-01
 
 > **Verification SQL:**
@@ -21,8 +21,8 @@ In this workshop, I implemented a data ingestion pipeline using **dlt** (Data Lo
 ### Question 2. What proportion of trips are paid with credit card? (1 point)
 
 * 16.66%
-* 26.66%
-* **36.66%**
+* **26.66%**
+* 36.66%
 * 46.66%
 
 > **Verification SQL:**
