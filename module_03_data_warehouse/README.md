@@ -1,8 +1,14 @@
-# Module 3: Data Warehouse
+# Module 3: Data Warehouse (BigQuery)
 
-## BigQuery
-- Data Warehouse
-- Partitioning vs Clustering
-- BigQuery Best Practices
-- BigQuery Internals
-- Machine Learning in BigQuery
+This module covers the fundamentals of Data Warehousing using Google BigQuery, focusing on the 2024 Yellow Taxi dataset.
+
+## 📚 Concepts Covered
+* **External vs. Materialized Tables:** Understanding when to query GCS directly vs. storing data in BQ.
+* **Columnar Storage:** Why querying specific columns (PULocationID) is cheaper than `SELECT *`.
+* **Partitioning:** Reducing data scan by segmenting tables by `tpep_dropoff_datetime`.
+* **Clustering:** Improving filter/sort performance by grouping data by `VendorID`.
+
+## 🛠️ SQL Scripts
+* `01_external_table.sql`: Defines the connection to GCS Parquet files.
+* `02_regular_table.sql`: Creates a standard BQ table for performance benchmarking.
+* `03_partitioned_table.sql`: Implements the optimized storage strategy.
