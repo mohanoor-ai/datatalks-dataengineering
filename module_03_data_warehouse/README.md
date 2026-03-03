@@ -12,3 +12,10 @@ This module covers the fundamentals of Data Warehousing using Google BigQuery, f
 * `01_external_table.sql`: Defines the connection to GCS Parquet files.
 * `02_regular_table.sql`: Creates a standard BQ table for performance benchmarking.
 * `03_partitioned_table.sql`: Implements the optimized storage strategy.
+
+# BigQuery Best Practices (Module 3)
+
+* **Filter by Partition:** Always use the partition column (`tpep_dropoff_datetime`) in the `WHERE` clause.
+* **Denormalize:** BigQuery performs best with flat, denormalized tables rather than deep joins.
+* **Avoid `SELECT *`:** Only query the columns you need to save on processing costs.
+* **Clustering Order:** Order columns in `CLUSTER BY` from lowest to highest cardinality.
