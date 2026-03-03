@@ -39,3 +39,10 @@ uv.lock
 # Ignore Python virtual environments
 .venv/
 .uv/
+# --- 2026 Zoomcamp Spark/Batch Rules ---
+**/env310/
+**/taxi-project/
+**/*.parquet
+**/*.csv
+**/data/pq/
+spark-warehouse/
