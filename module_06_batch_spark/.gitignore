@@ -1,19 +1,26 @@
-# Ignore Python virtual environment
-taxi-project/
-__pycache__/
-*.pyc
-
-# Ignore all data files (Raw and Processed)
-data/raw/*.parquet
-data/raw/*.csv
-data/pq/
-
-# Ignore Spark/Hadoop logs and temporary files
-spark-warehouse/
-derby.log
-metastore_db/
-.ipynb_checkpoints/
-# Ignore additional virtual environments
-notebooks/env310/
-env/
+# Data and Libraries
+data/
+lib/
 venv/
+.venv/
+env/
+
+# Data Files
+*.parquet
+*.csv
+*.gz
+*.zip
+*.json
+
+# Spark/Hadoop
+checkpoint/
+target/
+.spark-staging/
+metastore_db/
+derby.log
+
+# Python & Notebooks
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.vscode/

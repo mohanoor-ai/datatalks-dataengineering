@@ -1,48 +1,26 @@
-# Python-generated files
-__pycache__/
-*.py[oc]
-build/
-dist/
-wheels/
-*.egg-info
-
-# Virtual environments
-.venv
-
-# --- Add these lines here ---
-
-# Docker database data
-ny_taxi_postgres_data/
-
-# pgAdmin data (if you added a volume for it)
-pgadmin_data/week_1_docker_sql/*.csv.gz
-*.json
-.bruin.yml
-logs/runs
-logs/*.log
-*.py[cod]
-logs/queries
-*.db
-*.exe
-.bruin/
-*.duckdb.*
-*.ipynb_checkpoints
-*.ipynb
-uv.env/
-uv.lock
-# Ignore Jupyter checkpoints
-.ipynb_checkpoints/
-
-# Ignore Bruin internal metadata
-.bruin/
-
-# Ignore Python virtual environments
+# Data and Libraries
+data/
+lib/
+venv/
 .venv/
-.uv/
-# --- 2026 Zoomcamp Spark/Batch Rules ---
-**/env310/
-**/taxi-project/
-**/*.parquet
-**/*.csv
-**/data/pq/
-spark-warehouse/
+env/
+
+# Data Files
+*.parquet
+*.csv
+*.gz
+*.zip
+*.json
+
+# Spark/Hadoop
+checkpoint/
+target/
+.spark-staging/
+metastore_db/
+derby.log
+
+# Python & Notebooks
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.vscode/
