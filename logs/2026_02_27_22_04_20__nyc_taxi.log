@@ -1,0 +1,213 @@
+
+Pipeline: nyc_taxi (..)
+  No issues found
+
+✓ Successfully validated 4 assets across 1 pipeline, all good.
+
+Interval: 2022-01-01T00:00:00Z - 2022-02-01T00:00:00Z
+
+Starting the pipeline execution...
+
+[22:04:20] Running:  ingestion.trips
+[22:04:20] Running:  ingestion.payment_lookup
+[22:04:25] [ingestion.trips] >> Installed 1 package in 4.37s
+[22:04:33] [ingestion.trips] >> Downloading data from https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-01.parquet...
+[22:04:39] [ingestion.trips] >> Returning DataFrame with 5000 rows to Bruin.
+[22:04:39] [ingestion.trips] Successfully collected the data from the asset, uploading to the destination...
+[22:06:01] [ingestion.payment_lookup] >> 2026-02-27 22:06:01,199|[WARNING]|21944|26508|dlt|reference.py|__init__:76|When initializing destination factory of type dlt.destinations.duckdb, argument dest_table is not a valid field in DuckDbClientConfiguration or destination capabilities
+[22:06:01] [ingestion.payment_lookup] >> 2026-02-27 22:06:01,199|[WARNING]|21944|26508|dlt|reference.py|__init__:76|When initializing destination factory of type dlt.destinations.duckdb, argument staging_bucket is not a valid field in DuckDbClientConfiguration or destination capabilities
+[22:06:01] [ingestion.trips] >> 2026-02-27 22:06:01,199|[WARNING]|7704|14824|dlt|reference.py|__init__:76|When initializing destination factory of type dlt.destinations.duckdb, argument dest_table is not a valid field in DuckDbClientConfiguration or destination capabilities
+[22:06:01] [ingestion.trips] >> 2026-02-27 22:06:01,203|[WARNING]|7704|14824|dlt|reference.py|__init__:76|When initializing destination factory of type dlt.destinations.duckdb, argument staging_bucket is not a valid field in DuckDbClientConfiguration or destination capabilities
+[22:06:01] [ingestion.payment_lookup] >> 
+[22:06:01] [ingestion.trips] >> 
+[22:06:01] [ingestion.trips] >> Initiated the pipeline with the following:
+[22:06:01] [ingestion.payment_lookup] >> Initiated the pipeline with the following:
+[22:06:01] [ingestion.trips] >>   Source: mmap / asset_data
+[22:06:01] [ingestion.payment_lookup] >>   Source: csv / seed.raw
+[22:06:01] [ingestion.trips] >>   Destination: duckdb / ingestion.trips
+[22:06:01] [ingestion.payment_lookup] >>   Destination: duckdb / ingestion.payment_lookup
+[22:06:01] [ingestion.trips] >>   Incremental Strategy: replace
+[22:06:01] [ingestion.payment_lookup] >>   Incremental Strategy: replace
+[22:06:01] [ingestion.trips] >>   Incremental Key: None
+[22:06:01] [ingestion.payment_lookup] >>   Incremental Key: None
+[22:06:01] [ingestion.trips] >>   Primary Key: None
+[22:06:01] [ingestion.payment_lookup] >>   Primary Key: ['payment_type_id']
+[22:06:01] [ingestion.trips] >>   Pipeline ID: 1c640cda117b412bfd31f8d0ccfbc1825fdd42b287add7c24115163f8e9aced4
+[22:06:01] [ingestion.trips] >> 
+[22:06:01] [ingestion.payment_lookup] >>   Pipeline ID: 60911f862bb3aa6c321ed19700e7b396fbf4c7d5cf89203ff59af8406408a265
+[22:06:01] [ingestion.trips] >> 
+[22:06:01] [ingestion.payment_lookup] >> 
+[22:06:01] [ingestion.payment_lookup] >> 
+[22:06:01] [ingestion.trips] >> Starting the ingestion...
+[22:06:01] [ingestion.payment_lookup] >> Starting the ingestion...
+[22:06:02] [ingestion.payment_lookup] >> --- Extract _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 ---
+[22:06:02] [ingestion.payment_lookup] >> Resources: 0/1 (0.0%) | Time: 0.00s | Rate: 0.00/s
+[22:06:02] [ingestion.payment_lookup] >> Memory usage: 191.56 MB (73.10%) | CPU usage: 0.00%
+[22:06:02] [ingestion.payment_lookup] >> 
+[22:06:02] [ingestion.payment_lookup] >> --- Extract _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 ---
+[22:06:02] [ingestion.payment_lookup] >> Resources: 0/1 (0.0%) | Time: 0.01s | Rate: 0.00/s
+[22:06:02] [ingestion.payment_lookup] >> payment_lookup: 7  | Time: 0.00s | Rate: 0.00/s
+[22:06:02] [ingestion.payment_lookup] >> Memory usage: 191.61 MB (73.10%) | CPU usage: 0.00%
+[22:06:02] [ingestion.payment_lookup] >> 
+[22:06:02] [ingestion.payment_lookup] >> --- Extract _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 ---
+[22:06:02] [ingestion.payment_lookup] >> Resources: 1/1 (100.0%) | Time: 0.03s | Rate: 39.76/s
+[22:06:02] [ingestion.payment_lookup] >> payment_lookup: 7  | Time: 0.01s | Rate: 473.44/s
+[22:06:02] [ingestion.payment_lookup] >> Memory usage: 191.70 MB (73.10%) | CPU usage: 0.00%
+[22:06:02] [ingestion.payment_lookup] >> 
+[22:06:02] [ingestion.payment_lookup] >> --- Extract _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 ---
+[22:06:02] [ingestion.payment_lookup] >> Resources: 0/1 (0.0%) | Time: 0.00s | Rate: 0.00/s
+[22:06:02] [ingestion.payment_lookup] >> Memory usage: 191.77 MB (73.10%) | CPU usage: 0.00%
+[22:06:02] [ingestion.payment_lookup] >> 
+[22:06:02] [ingestion.payment_lookup] >> --- Extract _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 ---
+[22:06:02] [ingestion.payment_lookup] >> Resources: 0/1 (0.0%) | Time: 0.01s | Rate: 0.00/s
+[22:06:02] [ingestion.payment_lookup] >> _dlt_pipeline_state: 1  | Time: 0.00s | Rate: 0.00/s
+[22:06:02] [ingestion.payment_lookup] >> Memory usage: 191.83 MB (73.10%) | CPU usage: 0.00%
+[22:06:02] [ingestion.payment_lookup] >> 
+[22:06:02] [ingestion.payment_lookup] >> --- Extract _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 ---
+[22:06:02] [ingestion.payment_lookup] >> Resources: 1/1 (100.0%) | Time: 0.03s | Rate: 29.17/s
+[22:06:02] [ingestion.payment_lookup] >> _dlt_pipeline_state: 1  | Time: 0.02s | Rate: 46.03/s
+[22:06:02] [ingestion.payment_lookup] >> Memory usage: 191.84 MB (73.20%) | CPU usage: 0.00%
+[22:06:02] [ingestion.payment_lookup] >> 
+[22:06:02] [ingestion.payment_lookup] >>  Normalize _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 in 1772229962.0091057 
+[22:06:02] [ingestion.payment_lookup] >> Files: 0/2 (0.0%) | Time: 0.00s | Rate: 0.00/s
+[22:06:02] [ingestion.payment_lookup] >> Memory usage: 192.45 MB (74.10%) | CPU usage: 0.00%
+[22:06:02] [ingestion.payment_lookup] >> 
+[22:06:02] [ingestion.payment_lookup] >>  Normalize _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 in 1772229962.0091057 
+[22:06:02] [ingestion.payment_lookup] >> Files: 0/2 (0.0%) | Time: 0.00s | Rate: 0.00/s
+[22:06:02] [ingestion.payment_lookup] >> Items: 0  | Time: 0.00s | Rate: 0.00/s
+[22:06:02] [ingestion.payment_lookup] >> Memory usage: 192.45 MB (74.10%) | CPU usage: 0.00%
+[22:06:02] [ingestion.payment_lookup] >> 
+[22:06:02] [ingestion.payment_lookup] >>  Normalize _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 in 1772229962.0091057 
+[22:06:02] [ingestion.payment_lookup] >> Files: 2/2 (100.0%) | Time: 0.24s | Rate: 8.40/s
+[22:06:02] [ingestion.payment_lookup] >> Items: 8  | Time: 0.24s | Rate: 33.59/s
+[22:06:02] [ingestion.payment_lookup] >> Memory usage: 194.50 MB (73.60%) | CPU usage: 0.00%
+[22:06:02] [ingestion.payment_lookup] >> 
+[22:06:02] [ingestion.trips] >> Traceback (most recent call last):
+[22:06:02] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\dlt\destinations\sql_client.py", line 479, in _wrap
+[22:06:02] [ingestion.trips] >>     return f(self, *args, **kwargs)
+[22:06:02] [ingestion.trips] >>            ^^^^^^^^^^^^^^^^^^^^^^^^
+[22:06:02] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\dlt\destinations\impl\duckdb\sql_client.py", line 120, in open_connection
+[22:06:02] [ingestion.trips] >>     self._conn = self.credentials.conn_pool.borrow_conn(
+[22:06:02] [ingestion.trips] >>                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[22:06:02] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\dlt\destinations\impl\duckdb\configuration.py", line 119, in borrow_conn
+[22:06:02] [ingestion.trips] >>     new_conn = duckdb.connect(
+[22:06:02] [ingestion.trips] >>                ^^^^^^^^^^^^^^^
+[22:06:02] [ingestion.trips] >> _duckdb.IOException: IO Error: Cannot open file "c:\users\moha_\onedrive\documents\datatalks\dataeng\duckdb.db": The process cannot access the file because it is being used by another process.
+[22:06:02] [ingestion.trips] >> 
+[22:06:02] [ingestion.trips] >> File is already open in 
+[22:06:02] [ingestion.trips] >> C:\Users\moha_\AppData\Roaming\uv\python\cpython-3.11.14-windows-x86_64-none\python.exe (PID 21944)
+[22:06:02] [ingestion.trips] >> 
+[22:06:02] [ingestion.trips] >> During handling of the above exception, another exception occurred:
+[22:06:02] [ingestion.trips] >> 
+[22:06:02] [ingestion.trips] >> Traceback (most recent call last):
+[22:06:02] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\dlt\pipeline\pipeline.py", line 803, in _sync_destination
+[22:06:02] [ingestion.trips] >>     remote_state = self._restore_state_from_destination()
+[22:06:02] [ingestion.trips] >>                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[22:06:02] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\dlt\pipeline\pipeline.py", line 1623, in _restore_state_from_destination
+[22:06:02] [ingestion.trips] >>     with self._get_destination_clients(schema)[0] as job_client:
+[22:06:02] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\dlt\destinations\job_client_impl.py", line 424, in __enter__
+[22:06:02] [ingestion.trips] >>     self.sql_client.open_connection()
+[22:06:02] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\dlt\destinations\sql_client.py", line 487, in _wrap
+[22:06:02] [ingestion.trips] >>     raise DestinationConnectionError(type(self).__name__, self.dataset_name, str(ex), ex)
+[22:06:02] [ingestion.trips] >> dlt.destinations.exceptions.DestinationConnectionError: Connection with `client_type=DuckDbSqlClient` to `dataset_name=ingestion` failed. Please check if you configured the credentials at all and provided the right credentials values. You can be also denied access or your internet connection may be down. The actual reason given is: IO Error: Cannot open file "c:\users\moha_\onedrive\documents\datatalks\dataeng\duckdb.db": The process cannot access the file because it is being used by another process.
+[22:06:02] [ingestion.trips] >> 
+[22:06:02] [ingestion.trips] >> File is already open in 
+[22:06:02] [ingestion.trips] >> C:\Users\moha_\AppData\Roaming\uv\python\cpython-3.11.14-windows-x86_64-none\python.exe (PID 21944)
+[22:06:02] [ingestion.trips] >> 
+[22:06:02] [ingestion.trips] >> The above exception was the direct cause of the following exception:
+[22:06:02] [ingestion.trips] >> 
+[22:06:02] [ingestion.trips] >> Traceback (most recent call last):
+[22:06:02] [ingestion.trips] >>   File "<frozen runpy>", line 198, in _run_module_as_main
+[22:06:02] [ingestion.trips] >>   File "<frozen runpy>", line 88, in _run_code
+[22:06:02] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Scripts\ingestr.exe\__main__.py", line 10, in <module>
+[22:06:02] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\ingestr\main.py", line 849, in main
+[22:06:02] [ingestion.trips] >>     app()
+[22:06:02] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\typer\main.py", line 342, in __call__
+[22:06:02] [ingestion.trips] >>     raise e
+[22:06:02] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\typer\main.py", line 325, in __call__
+[22:06:02] [ingestion.trips] >>     return get_command(self)(*args, **kwargs)
+[22:06:02] [ingestion.trips] >>            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[22:06:02] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\click\core.py", line 1161, in __call__
+[22:06:02] [ingestion.trips] >>     return self.main(*args, **kwargs)
+[22:06:02] [ingestion.trips] >>            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[22:06:02] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\typer\core.py", line 738, in main
+[22:06:02] [ingestion.trips] >>     return _main(
+[22:06:02] [ingestion.trips] >>            ^^^^^^
+[22:06:02] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\typer\core.py", line 197, in _main
+[22:06:02] [ingestion.trips] >>     rv = self.invoke(ctx)
+[22:06:02] [ingestion.trips] >>          ^^^^^^^^^^^^^^^^
+[22:06:02] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\click\core.py", line 1697, in invoke
+[22:06:02] [ingestion.trips] >>     return _process_result(sub_ctx.command.invoke(sub_ctx))
+[22:06:02] [ingestion.trips] >>                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[22:06:02] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\click\core.py", line 1443, in invoke
+[22:06:02] [ingestion.trips] >>     return ctx.invoke(self.callback, **ctx.params)
+[22:06:02] [ingestion.trips] >>            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[22:06:02] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\click\core.py", line 788, in invoke
+[22:06:02] [ingestion.trips] >>     return __callback(*args, **kwargs)
+[22:06:02] [ingestion.trips] >>            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[22:06:02] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\typer\main.py", line 707, in wrapper
+[22:06:02] [ingestion.trips] >>     return callback(**use_params)
+[22:06:02] [ingestion.trips] >>            ^^^^^^^^^^^^^^^^^^^^^^
+[22:06:02] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\ingestr\main.py", line 704, in ingest
+[22:06:02] [ingestion.trips] >>     run_info: LoadInfo = run_pipeline()
+[22:06:02] [ingestion.trips] >>                          ^^^^^^^^^^^^^^
+[22:06:02] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\ingestr\main.py", line 672, in run_pipeline
+[22:06:02] [ingestion.trips] >>     return pipeline.run(
+[22:06:02] [ingestion.trips] >>            ^^^^^^^^^^^^^
+[22:06:02] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\dlt\pipeline\pipeline.py", line 224, in _wrap
+[22:06:02] [ingestion.trips] >>     step_info = f(self, *args, **kwargs)
+[22:06:02] [ingestion.trips] >>                 ^^^^^^^^^^^^^^^^^^^^^^^^
+[22:06:02] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\dlt\pipeline\pipeline.py", line 272, in _wrap
+[22:06:02] [ingestion.trips] >>     return f(self, *args, **kwargs)
+[22:06:02] [ingestion.trips] >>            ^^^^^^^^^^^^^^^^^^^^^^^^
+[22:06:02] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\dlt\pipeline\pipeline.py", line 728, in run
+[22:06:02] [ingestion.trips] >>     self._sync_destination(destination, staging, dataset_name)
+[22:06:02] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\dlt\pipeline\pipeline.py", line 178, in _wrap
+[22:06:02] [ingestion.trips] >>     rv = f(self, *args, **kwargs)
+[22:06:02] [ingestion.trips] >>          ^^^^^^^^^^^^^^^^^^^^^^^^
+[22:06:02] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\dlt\pipeline\pipeline.py", line 898, in _sync_destination
+[22:06:02] [ingestion.trips] >>     raise PipelineStepFailed(self, "sync", None, ex, None) from ex
+[22:06:02] [ingestion.trips] >> dlt.pipeline.exceptions.PipelineStepFailed: Pipeline execution failed at `step=sync` with exception:
+[22:06:02] [ingestion.trips] >> 
+[22:06:02] [ingestion.trips] >> <class 'dlt.destinations.exceptions.DestinationConnectionError'>
+[22:06:02] [ingestion.trips] >> Connection with `client_type=DuckDbSqlClient` to `dataset_name=ingestion` failed. Please check if you configured the credentials at all and provided the right credentials values. You can be also denied access or your internet connection may be down. The actual reason given is: IO Error: Cannot open file "c:\users\moha_\onedrive\documents\datatalks\dataeng\duckdb.db": The process cannot access the file because it is being used by another process.
+[22:06:02] [ingestion.trips] >> 
+[22:06:02] [ingestion.trips] >> File is already open in 
+[22:06:02] [ingestion.trips] >> C:\Users\moha_\AppData\Roaming\uv\python\cpython-3.11.14-windows-x86_64-none\python.exe (PID 21944)
+[22:06:02] [ingestion.payment_lookup] >>  Load _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 in 1772229962.0091057 
+[22:06:02] [ingestion.payment_lookup] >> Jobs: 0/2 (0.0%) | Time: 0.00s | Rate: 0.00/s
+[22:06:02] [ingestion.payment_lookup] >> Memory usage: 194.86 MB (73.40%) | CPU usage: 0.00%
+[22:06:02] [ingestion.payment_lookup] >> 
+[22:06:03] [ingestion.payment_lookup] >>  Load _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 in 1772229962.0091057 
+[22:06:03] [ingestion.payment_lookup] >> Jobs: 2/2 (100.0%) | Time: 0.38s | Rate: 5.32/s
+[22:06:03] [ingestion.payment_lookup] >> Memory usage: 198.84 MB (74.10%) | CPU usage: 0.00%
+[22:06:03] [ingestion.payment_lookup] >> 
+[22:06:03] [ingestion.payment_lookup] >> Successfully finished loading data from 'csv' to 'duckdb' in 1.93 seconds 
+[22:06:03] [ingestion.payment_lookup] >> 
+[22:06:04] Failed: ingestion.trips (1m43.566s)
+[22:06:05] Finished: ingestion.payment_lookup (1m44.366s)
+[22:06:05] Running:  ingestion.payment_lookup:payment_type_name:not_null
+[22:06:05] Running:  ingestion.payment_lookup:payment_type_id:not_null
+[22:06:05] Running:  ingestion.payment_lookup:payment_type_id:unique
+[22:06:05] Finished: ingestion.payment_lookup:payment_type_name:not_null (104ms)
+[22:06:05] Finished: ingestion.payment_lookup:payment_type_id:unique (187ms)
+[22:06:05] Finished: ingestion.payment_lookup:payment_type_id:not_null (227ms)
+
+==================================================
+
+FAIL ingestion.trips 
+PASS ingestion.payment_lookup ...
+UPSTREAM FAILED reports.trips_report U
+UPSTREAM FAILED staging.trips 
+
+
+bruin run completed with failures in 1m44.593s
+
+ ✗ Assets executed      1 failed / 1 succeeded / 2 skipped
+ ✗ Quality checks       3 succeeded / 1 skipped
+
+
+1 assets failed
+└── ingestion.trips
+    └── failed to execute Python script: failed to run load the data into the destination: exit status 1
+

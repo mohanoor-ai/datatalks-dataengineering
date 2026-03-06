@@ -1,0 +1,33 @@
+
+Pipeline: nyc_taxi (..\..\..)
+  No issues found
+
+✓ Successfully validated 4 assets across 1 pipeline, all good.
+
+Interval: 2026-02-22T00:00:00Z - 2026-02-22T23:59:59Z
+
+Starting the pipeline execution...
+
+[23:54:43] Running:  ingestion.trips
+[23:54:43] >> Installed 1 package in 206ms
+[23:54:44] >> Traceback (most recent call last):
+[23:54:44] >>   File "C:\Users\moha_\AppData\Local\Temp\bruin-arrow-1620271576.py", line 19, in <module>
+[23:54:44] >>     df = module.materialize()
+[23:54:44] >>          ^^^^^^^^^^^^^^^^^^^^
+[23:54:44] >> TypeError: materialize() missing 1 required positional argument: 'variables'
+[23:54:44] Failed: ingestion.trips (1.074s)
+
+==================================================
+
+FAIL ingestion.trips 
+
+
+bruin run completed with failures in 1.074s
+
+ ✗ Assets executed      1 failed
+
+
+1 assets failed
+└── ingestion.trips
+    └── failed to execute Python script: failed to run asset code: exit status 1
+

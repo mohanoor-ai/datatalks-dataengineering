@@ -1,0 +1,154 @@
+
+Pipeline: nyc_taxi (..)
+  No issues found
+
+✓ Successfully validated 4 assets across 1 pipeline, all good.
+
+Interval: 2022-01-01T00:00:00Z - 2022-02-01T00:00:00Z
+
+Starting the pipeline execution...
+
+[21:36:52] Running:  ingestion.trips
+[21:36:52] Running:  ingestion.payment_lookup
+[21:36:53] [ingestion.trips] >> Installed 1 package in 771ms
+[21:36:55] [ingestion.trips] >> Downloading data from https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-01.parquet...
+[21:36:59] [ingestion.payment_lookup] >> 2026-02-24 21:36:59,156|[WARNING]|21020|20500|dlt|reference.py|__init__:76|When initializing destination factory of type dlt.destinations.duckdb, argument dest_table is not a valid field in DuckDbClientConfiguration or destination capabilities
+[21:36:59] [ingestion.payment_lookup] >> 2026-02-24 21:36:59,157|[WARNING]|21020|20500|dlt|reference.py|__init__:76|When initializing destination factory of type dlt.destinations.duckdb, argument staging_bucket is not a valid field in DuckDbClientConfiguration or destination capabilities
+[21:36:59] [ingestion.payment_lookup] >> 
+[21:36:59] [ingestion.payment_lookup] >> Initiated the pipeline with the following:
+[21:36:59] [ingestion.payment_lookup] >>   Source: csv / seed.raw
+[21:36:59] [ingestion.payment_lookup] >>   Destination: duckdb / ingestion.payment_lookup
+[21:36:59] [ingestion.payment_lookup] >>   Incremental Strategy: replace
+[21:36:59] [ingestion.payment_lookup] >>   Incremental Key: None
+[21:36:59] [ingestion.payment_lookup] >>   Primary Key: ['payment_type_id']
+[21:36:59] [ingestion.payment_lookup] >>   Pipeline ID: 60911f862bb3aa6c321ed19700e7b396fbf4c7d5cf89203ff59af8406408a265
+[21:36:59] [ingestion.payment_lookup] >> 
+[21:36:59] [ingestion.payment_lookup] >> 
+[21:36:59] [ingestion.payment_lookup] >> Starting the ingestion...
+[21:36:59] [ingestion.payment_lookup] >> --- Extract _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 ---
+[21:36:59] [ingestion.payment_lookup] >> Resources: 0/1 (0.0%) | Time: 0.00s | Rate: 0.00/s
+[21:36:59] [ingestion.payment_lookup] >> Memory usage: 186.65 MB (75.20%) | CPU usage: 0.00%
+[21:36:59] [ingestion.payment_lookup] >> 
+[21:36:59] [ingestion.payment_lookup] >> --- Extract _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 ---
+[21:36:59] [ingestion.payment_lookup] >> Resources: 0/1 (0.0%) | Time: 0.01s | Rate: 0.00/s
+[21:36:59] [ingestion.payment_lookup] >> payment_lookup: 7  | Time: 0.00s | Rate: 0.00/s
+[21:36:59] [ingestion.payment_lookup] >> Memory usage: 186.69 MB (75.20%) | CPU usage: 0.00%
+[21:36:59] [ingestion.payment_lookup] >> 
+[21:36:59] [ingestion.payment_lookup] >> --- Extract _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 ---
+[21:36:59] [ingestion.payment_lookup] >> Resources: 1/1 (100.0%) | Time: 0.03s | Rate: 37.44/s
+[21:36:59] [ingestion.payment_lookup] >> payment_lookup: 7  | Time: 0.02s | Rate: 366.72/s
+[21:36:59] [ingestion.payment_lookup] >> Memory usage: 186.75 MB (75.20%) | CPU usage: 0.00%
+[21:36:59] [ingestion.payment_lookup] >> 
+[21:36:59] [ingestion.payment_lookup] >>  Normalize _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 in 1771969019.4469802 
+[21:36:59] [ingestion.payment_lookup] >> Files: 0/1 (0.0%) | Time: 0.00s | Rate: 0.00/s
+[21:36:59] [ingestion.payment_lookup] >> Memory usage: 187.16 MB (75.20%) | CPU usage: 0.00%
+[21:36:59] [ingestion.payment_lookup] >> 
+[21:36:59] [ingestion.payment_lookup] >>  Normalize _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 in 1771969019.4469802 
+[21:36:59] [ingestion.payment_lookup] >> Files: 0/1 (0.0%) | Time: 0.00s | Rate: 0.00/s
+[21:36:59] [ingestion.payment_lookup] >> Items: 0  | Time: 0.00s | Rate: 0.00/s
+[21:36:59] [ingestion.payment_lookup] >> Memory usage: 187.17 MB (75.20%) | CPU usage: 0.00%
+[21:36:59] [ingestion.payment_lookup] >> 
+[21:36:59] [ingestion.payment_lookup] >>  Normalize _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 in 1771969019.4469802 
+[21:36:59] [ingestion.payment_lookup] >> Files: 1/1 (100.0%) | Time: 0.10s | Rate: 10.29/s
+[21:36:59] [ingestion.payment_lookup] >> Items: 7  | Time: 0.10s | Rate: 72.01/s
+[21:36:59] [ingestion.payment_lookup] >> Memory usage: 189.39 MB (75.30%) | CPU usage: 0.00%
+[21:36:59] [ingestion.payment_lookup] >> 
+[21:36:59] [ingestion.payment_lookup] >>  Load _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 in 1771969019.4469802 
+[21:36:59] [ingestion.payment_lookup] >> Jobs: 0/1 (0.0%) | Time: 0.00s | Rate: 0.00/s
+[21:36:59] [ingestion.payment_lookup] >> Memory usage: 189.69 MB (75.30%) | CPU usage: 0.00%
+[21:36:59] [ingestion.payment_lookup] >> 
+[21:37:00] [ingestion.payment_lookup] >>  Load _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 in 1771969019.4469802 
+[21:37:00] [ingestion.payment_lookup] >> Jobs: 1/1 (100.0%) | Time: 0.28s | Rate: 3.52/s
+[21:37:00] [ingestion.payment_lookup] >> Memory usage: 192.52 MB (75.40%) | CPU usage: 0.00%
+[21:37:00] [ingestion.payment_lookup] >> 
+[21:37:00] [ingestion.payment_lookup] >> Successfully finished loading data from 'csv' to 'duckdb' in 0.83 seconds 
+[21:37:00] [ingestion.payment_lookup] >> 
+[21:37:00] [ingestion.trips] >> Returning DataFrame with 5000 rows to Bruin.
+[21:37:00] [ingestion.trips] Successfully collected the data from the asset, uploading to the destination...
+[21:37:02] Finished: ingestion.payment_lookup (9.647s)
+[21:37:02] Running:  ingestion.payment_lookup:payment_type_id:not_null
+[21:37:02] Running:  ingestion.payment_lookup:payment_type_name:not_null
+[21:37:02] Running:  ingestion.payment_lookup:payment_type_id:unique
+[21:37:02] Finished: ingestion.payment_lookup:payment_type_id:not_null (66ms)
+[21:37:02] Finished: ingestion.payment_lookup:payment_type_name:not_null (119ms)
+[21:37:02] Finished: ingestion.payment_lookup:payment_type_id:unique (193ms)
+[21:37:05] [ingestion.trips] >> 2026-02-24 21:37:05,631|[WARNING]|28736|23936|dlt|reference.py|__init__:76|When initializing destination factory of type dlt.destinations.duckdb, argument dest_table is not a valid field in DuckDbClientConfiguration or destination capabilities
+[21:37:05] [ingestion.trips] >> 2026-02-24 21:37:05,631|[WARNING]|28736|23936|dlt|reference.py|__init__:76|When initializing destination factory of type dlt.destinations.duckdb, argument staging_bucket is not a valid field in DuckDbClientConfiguration or destination capabilities
+[21:37:05] [ingestion.trips] >> 
+[21:37:05] [ingestion.trips] >> Initiated the pipeline with the following:
+[21:37:05] [ingestion.trips] >>   Source: mmap / asset_data
+[21:37:05] [ingestion.trips] >>   Destination: duckdb / ingestion.trips
+[21:37:05] [ingestion.trips] >>   Incremental Strategy: replace
+[21:37:05] [ingestion.trips] >>   Incremental Key: None
+[21:37:05] [ingestion.trips] >>   Primary Key: None
+[21:37:05] [ingestion.trips] >>   Pipeline ID: 1c640cda117b412bfd31f8d0ccfbc1825fdd42b287add7c24115163f8e9aced4
+[21:37:05] [ingestion.trips] >> 
+[21:37:05] [ingestion.trips] >> 
+[21:37:05] [ingestion.trips] >> Starting the ingestion...
+[21:37:06] [ingestion.trips] >> --- Extract _1c640cda117b412bfd31f8d0ccfbdalikqd42b287add7c24115163f8e9aced4 ---
+[21:37:06] [ingestion.trips] >> Resources: 0/1 (0.0%) | Time: 0.00s | Rate: 0.00/s
+[21:37:06] [ingestion.trips] >> Memory usage: 186.96 MB (74.70%) | CPU usage: 0.00%
+[21:37:06] [ingestion.trips] >> 
+[21:37:06] [ingestion.trips] >> --- Extract _1c640cda117b412bfd31f8d0ccfbdalikqd42b287add7c24115163f8e9aced4 ---
+[21:37:06] [ingestion.trips] >> Resources: 0/1 (0.0%) | Time: 0.07s | Rate: 0.00/s
+[21:37:06] [ingestion.trips] >> trips: 5000  | Time: 0.00s | Rate: 0.00/s
+[21:37:06] [ingestion.trips] >> Memory usage: 191.16 MB (74.70%) | CPU usage: 0.00%
+[21:37:06] [ingestion.trips] >> 
+[21:37:06] [ingestion.trips] >> --- Extract _1c640cda117b412bfd31f8d0ccfbdalikqd42b287add7c24115163f8e9aced4 ---
+[21:37:06] [ingestion.trips] >> Resources: 1/1 (100.0%) | Time: 0.10s | Rate: 10.48/s
+[21:37:06] [ingestion.trips] >> trips: 5000  | Time: 0.03s | Rate: 196976.72/s
+[21:37:06] [ingestion.trips] >> Memory usage: 194.65 MB (74.70%) | CPU usage: 0.00%
+[21:37:06] [ingestion.trips] >> 
+[21:37:06] [ingestion.trips] >>  Normalize _1c640cda117b412bfd31f8d0ccfbdalikqd42b287add7c24115163f8e9aced4 in 1771969026.016794 
+[21:37:06] [ingestion.trips] >> Files: 0/1 (0.0%) | Time: 0.00s | Rate: 0.00/s
+[21:37:06] [ingestion.trips] >> Memory usage: 195.05 MB (74.70%) | CPU usage: 0.00%
+[21:37:06] [ingestion.trips] >> 
+[21:37:06] [ingestion.trips] >>  Normalize _1c640cda117b412bfd31f8d0ccfbdalikqd42b287add7c24115163f8e9aced4 in 1771969026.016794 
+[21:37:06] [ingestion.trips] >> Files: 0/1 (0.0%) | Time: 0.00s | Rate: 0.00/s
+[21:37:06] [ingestion.trips] >> Items: 0  | Time: 0.00s | Rate: 0.00/s
+[21:37:06] [ingestion.trips] >> Memory usage: 195.05 MB (74.70%) | CPU usage: 0.00%
+[21:37:06] [ingestion.trips] >> 
+[21:37:06] [ingestion.trips] >>  Normalize _1c640cda117b412bfd31f8d0ccfbdalikqd42b287add7c24115163f8e9aced4 in 1771969026.016794 
+[21:37:06] [ingestion.trips] >> Files: 1/1 (100.0%) | Time: 0.07s | Rate: 13.87/s
+[21:37:06] [ingestion.trips] >> Items: 5000  | Time: 0.07s | Rate: 69338.34/s
+[21:37:06] [ingestion.trips] >> Memory usage: 195.59 MB (74.70%) | CPU usage: 0.00%
+[21:37:06] [ingestion.trips] >> 
+[21:37:06] [ingestion.trips] >>  Load _1c640cda117b412bfd31f8d0ccfbdalikqd42b287add7c24115163f8e9aced4 in 1771969026.016794 
+[21:37:06] [ingestion.trips] >> Jobs: 0/1 (0.0%) | Time: 0.00s | Rate: 0.00/s
+[21:37:06] [ingestion.trips] >> Memory usage: 195.52 MB (74.60%) | CPU usage: 0.00%
+[21:37:06] [ingestion.trips] >> 
+[21:37:06] [ingestion.trips] >>  Load _1c640cda117b412bfd31f8d0ccfbdalikqd42b287add7c24115163f8e9aced4 in 1771969026.016794 
+[21:37:06] [ingestion.trips] >> Jobs: 1/1 (100.0%) | Time: 0.26s | Rate: 3.81/s
+[21:37:06] [ingestion.trips] >> Memory usage: 199.27 MB (74.60%) | CPU usage: 0.00%
+[21:37:06] [ingestion.trips] >> 
+[21:37:06] [ingestion.trips] >> Successfully finished loading data from 'mmap' to 'duckdb' in 0.92 seconds 
+[21:37:06] [ingestion.trips] >> 
+[21:37:08] [ingestion.trips] Successfully loaded the data from the asset into the destination.
+[21:37:08] Finished: ingestion.trips (15.831s)
+[21:37:08] Running:  staging.trips
+[21:37:08] Finished: staging.trips (136ms)
+[21:37:08] Running:  reports.trips_report
+[21:37:08] Failed: reports.trips_report (145ms)
+
+==================================================
+
+PASS ingestion.payment_lookup ...
+PASS ingestion.trips 
+PASS staging.trips 
+FAIL reports.trips_report U
+
+
+bruin run completed with failures in 16.115s
+
+ ✗ Assets executed      1 failed / 3 succeeded
+ ✗ Quality checks       3 succeeded / 1 skipped
+
+
+1 assets failed
+└── reports.trips_report
+    └── Internal: Catalog Error: Table with name trips_report does not exist!
+        Did you mean "ingestion.trips or staging.trips"?
+        
+        LINE 2: DELETE FROM reports.trips_report WHERE trip_date BETWEEN '2022-01-01' AND '2022-02-01'
+                                              ^
+

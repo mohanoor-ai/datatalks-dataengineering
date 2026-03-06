@@ -1,0 +1,96 @@
+
+Pipeline: nyc_taxi (.)
+  No issues found
+
+✓ Successfully validated 4 assets across 1 pipeline, all good.
+
+Interval: 2022-01-01T00:00:00Z - 2022-02-01T00:00:00Z
+
+Starting the pipeline execution...
+
+[23:46:42] Running:  ingestion.trips
+[23:46:42] Running:  ingestion.payment_lookup
+[23:46:43] Finished: ingestion.trips (900ms)
+[23:46:45] [ingestion.payment_lookup] >> 2026-02-23 23:46:45,966|[WARNING]|16380|8200|dlt|reference.py|__init__:76|When initializing destination factory of type dlt.destinations.duckdb, argument dest_table is not a valid field in DuckDbClientConfiguration or destination capabilities
+[23:46:45] [ingestion.payment_lookup] >> 2026-02-23 23:46:45,966|[WARNING]|16380|8200|dlt|reference.py|__init__:76|When initializing destination factory of type dlt.destinations.duckdb, argument staging_bucket is not a valid field in DuckDbClientConfiguration or destination capabilities
+[23:46:45] [ingestion.payment_lookup] >> 
+[23:46:45] [ingestion.payment_lookup] >> Initiated the pipeline with the following:
+[23:46:45] [ingestion.payment_lookup] >>   Source: csv / seed.raw
+[23:46:45] [ingestion.payment_lookup] >>   Destination: duckdb / ingestion.payment_lookup
+[23:46:45] [ingestion.payment_lookup] >>   Incremental Strategy: replace
+[23:46:45] [ingestion.payment_lookup] >>   Incremental Key: None
+[23:46:45] [ingestion.payment_lookup] >>   Primary Key: ['payment_type_id']
+[23:46:45] [ingestion.payment_lookup] >>   Pipeline ID: 60911f862bb3aa6c321ed19700e7b396fbf4c7d5cf89203ff59af8406408a265
+[23:46:45] [ingestion.payment_lookup] >> 
+[23:46:45] [ingestion.payment_lookup] >> 
+[23:46:45] [ingestion.payment_lookup] >> Starting the ingestion...
+[23:46:46] [ingestion.payment_lookup] >> --- Extract _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 ---
+[23:46:46] [ingestion.payment_lookup] >> Resources: 0/1 (0.0%) | Time: 0.00s | Rate: 0.00/s
+[23:46:46] [ingestion.payment_lookup] >> Memory usage: 180.00 MB (81.40%) | CPU usage: 0.00%
+[23:46:46] [ingestion.payment_lookup] >> 
+[23:46:46] [ingestion.payment_lookup] >> --- Extract _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 ---
+[23:46:46] [ingestion.payment_lookup] >> Resources: 0/1 (0.0%) | Time: 0.01s | Rate: 0.00/s
+[23:46:46] [ingestion.payment_lookup] >> payment_lookup: 7  | Time: 0.00s | Rate: 0.00/s
+[23:46:46] [ingestion.payment_lookup] >> Memory usage: 180.04 MB (81.40%) | CPU usage: 0.00%
+[23:46:46] [ingestion.payment_lookup] >> 
+[23:46:46] [ingestion.payment_lookup] >> --- Extract _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 ---
+[23:46:46] [ingestion.payment_lookup] >> Resources: 1/1 (100.0%) | Time: 0.03s | Rate: 32.43/s
+[23:46:46] [ingestion.payment_lookup] >> payment_lookup: 7  | Time: 0.03s | Rate: 278.26/s
+[23:46:46] [ingestion.payment_lookup] >> Memory usage: 180.34 MB (81.40%) | CPU usage: 0.00%
+[23:46:46] [ingestion.payment_lookup] >> 
+[23:46:46] [ingestion.payment_lookup] >>  Normalize _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 in 1771890406.118681 
+[23:46:46] [ingestion.payment_lookup] >> Files: 0/1 (0.0%) | Time: 0.00s | Rate: 0.00/s
+[23:46:46] [ingestion.payment_lookup] >> Memory usage: 181.00 MB (81.40%) | CPU usage: 0.00%
+[23:46:46] [ingestion.payment_lookup] >> 
+[23:46:46] [ingestion.payment_lookup] >>  Normalize _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 in 1771890406.118681 
+[23:46:46] [ingestion.payment_lookup] >> Files: 0/1 (0.0%) | Time: 0.00s | Rate: 0.00/s
+[23:46:46] [ingestion.payment_lookup] >> Items: 0  | Time: 0.00s | Rate: 0.00/s
+[23:46:46] [ingestion.payment_lookup] >> Memory usage: 181.00 MB (81.40%) | CPU usage: 0.00%
+[23:46:46] [ingestion.payment_lookup] >> 
+[23:46:46] [ingestion.payment_lookup] >>  Normalize _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 in 1771890406.118681 
+[23:46:46] [ingestion.payment_lookup] >> Files: 1/1 (100.0%) | Time: 0.02s | Rate: 46.27/s
+[23:46:46] [ingestion.payment_lookup] >> Items: 7  | Time: 0.02s | Rate: 323.92/s
+[23:46:46] [ingestion.payment_lookup] >> Memory usage: 183.88 MB (81.50%) | CPU usage: 0.00%
+[23:46:46] [ingestion.payment_lookup] >> 
+[23:46:46] [ingestion.payment_lookup] >>  Load _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 in 1771890406.118681 
+[23:46:46] [ingestion.payment_lookup] >> Jobs: 0/1 (0.0%) | Time: 0.00s | Rate: 0.00/s
+[23:46:46] [ingestion.payment_lookup] >> Memory usage: 184.71 MB (81.50%) | CPU usage: 0.00%
+[23:46:46] [ingestion.payment_lookup] >> 
+[23:46:46] [ingestion.payment_lookup] >>  Load _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 in 1771890406.118681 
+[23:46:46] [ingestion.payment_lookup] >> Jobs: 1/1 (100.0%) | Time: 0.12s | Rate: 8.41/s
+[23:46:46] [ingestion.payment_lookup] >> Memory usage: 188.45 MB (81.50%) | CPU usage: 0.00%
+[23:46:46] [ingestion.payment_lookup] >> 
+[23:46:46] [ingestion.payment_lookup] >> Successfully finished loading data from 'csv' to 'duckdb' in 0.38 seconds 
+[23:46:46] [ingestion.payment_lookup] >> 
+[23:46:47] Finished: ingestion.payment_lookup (4.892s)
+[23:46:47] Running:  ingestion.payment_lookup:payment_type_name:not_null
+[23:46:47] Running:  ingestion.payment_lookup:payment_type_id:unique
+[23:46:47] Running:  ingestion.payment_lookup:payment_type_id:not_null
+[23:46:47] Finished: ingestion.payment_lookup:payment_type_name:not_null (16ms)
+[23:46:47] Finished: ingestion.payment_lookup:payment_type_id:not_null (32ms)
+[23:46:47] Finished: ingestion.payment_lookup:payment_type_id:unique (48ms)
+[23:46:47] Running:  staging.trips
+[23:46:47] Failed: staging.trips (42ms)
+
+==================================================
+
+PASS ingestion.trips 
+PASS ingestion.payment_lookup ...
+FAIL staging.trips 
+UPSTREAM FAILED reports.trips_report U
+
+
+bruin run completed with failures in 4.983s
+
+ ✗ Assets executed      1 failed / 2 succeeded / 1 skipped
+ ✗ Quality checks       3 succeeded / 1 skipped
+
+
+1 assets failed
+└── staging.trips
+    └── Internal: Catalog Error: Table with name trips does not exist!
+        Did you mean "sqlite_temp_master"?
+        
+        LINE 13:     ON t.payment_type = p.payment_type_id
+                          ^
+

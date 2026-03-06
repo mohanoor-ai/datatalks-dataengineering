@@ -1,0 +1,9 @@
+
+Pipeline: nyc_taxi (..\..\..)
+  ingestion.trips (assets\ingestion\trips.asset.yml)
+    └── Asset name 'ingestion.trips' is not unique, please make sure all the task names are unique (task-name-unique)
+        ├─ C:\Users\moha_\OneDrive\Documents\datatalks\DataEng\pipeline\assets\ingestion\trips.asset.yml
+        └─ C:\Users\moha_\OneDrive\Documents\datatalks\DataEng\pipeline\assets\ingestion\trips.py
+
+
+✘ Checked 1 pipeline and found 1 issue, please check above.

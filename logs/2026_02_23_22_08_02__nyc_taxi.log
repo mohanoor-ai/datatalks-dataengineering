@@ -1,0 +1,92 @@
+
+Pipeline: nyc_taxi (..)
+  No issues found
+
+✓ Successfully validated 3 assets across 1 pipeline, all good.
+
+Interval: 2022-01-01T00:00:00Z - 2022-02-01T00:00:00Z
+
+Starting the pipeline execution...
+
+[22:08:02] Running:  ingestion.trips
+[22:08:02] Running:  raw.taxi_zone_lookup
+[22:08:02] Running:  raw.payment_lookup
+[22:08:02] Finished: raw.taxi_zone_lookup (535ms)
+[22:08:04] Finished: ingestion.trips (1.848s)
+[22:08:08] [raw.payment_lookup] >> 2026-02-23 22:08:08,273|[WARNING]|20916|27344|dlt|reference.py|__init__:76|When initializing destination factory of type dlt.destinations.duckdb, argument dest_table is not a valid field in DuckDbClientConfiguration or destination capabilities
+[22:08:08] [raw.payment_lookup] >> 2026-02-23 22:08:08,273|[WARNING]|20916|27344|dlt|reference.py|__init__:76|When initializing destination factory of type dlt.destinations.duckdb, argument staging_bucket is not a valid field in DuckDbClientConfiguration or destination capabilities
+[22:08:08] [raw.payment_lookup] >> 
+[22:08:08] [raw.payment_lookup] >> Initiated the pipeline with the following:
+[22:08:08] [raw.payment_lookup] >>   Source: csv / seed.raw
+[22:08:08] [raw.payment_lookup] >>   Destination: duckdb / raw.payment_lookup
+[22:08:08] [raw.payment_lookup] >>   Incremental Strategy: replace
+[22:08:08] [raw.payment_lookup] >>   Incremental Key: None
+[22:08:08] [raw.payment_lookup] >>   Primary Key: ['payment_type_id']
+[22:08:08] [raw.payment_lookup] >>   Pipeline ID: f2deebf6f5fd959649b654bab9e3f7a5eab9f3eb8d0c367411af45c0d7953127
+[22:08:08] [raw.payment_lookup] >> 
+[22:08:08] [raw.payment_lookup] >> 
+[22:08:08] [raw.payment_lookup] >> Starting the ingestion...
+[22:08:08] [raw.payment_lookup] >> --- Extract f2deebf6f5fd959649b654bab9e3f7a5eab9f3eb8d0c367411af45c0d7953127 ---
+[22:08:08] [raw.payment_lookup] >> Resources: 0/1 (0.0%) | Time: 0.00s | Rate: 0.00/s
+[22:08:08] [raw.payment_lookup] >> Memory usage: 182.24 MB (77.10%) | CPU usage: 0.00%
+[22:08:08] [raw.payment_lookup] >> 
+[22:08:08] [raw.payment_lookup] >> --- Extract f2deebf6f5fd959649b654bab9e3f7a5eab9f3eb8d0c367411af45c0d7953127 ---
+[22:08:08] [raw.payment_lookup] >> Resources: 0/1 (0.0%) | Time: 0.01s | Rate: 0.00/s
+[22:08:08] [raw.payment_lookup] >> payment_lookup: 7  | Time: 0.00s | Rate: 0.00/s
+[22:08:08] [raw.payment_lookup] >> Memory usage: 182.28 MB (77.10%) | CPU usage: 0.00%
+[22:08:08] [raw.payment_lookup] >> 
+[22:08:08] [raw.payment_lookup] >> --- Extract f2deebf6f5fd959649b654bab9e3f7a5eab9f3eb8d0c367411af45c0d7953127 ---
+[22:08:08] [raw.payment_lookup] >> Resources: 1/1 (100.0%) | Time: 0.02s | Rate: 42.92/s
+[22:08:08] [raw.payment_lookup] >> payment_lookup: 7  | Time: 0.02s | Rate: 446.43/s
+[22:08:08] [raw.payment_lookup] >> Memory usage: 182.35 MB (77.10%) | CPU usage: 0.00%
+[22:08:08] [raw.payment_lookup] >> 
+[22:08:08] [raw.payment_lookup] >> --- Extract f2deebf6f5fd959649b654bab9e3f7a5eab9f3eb8d0c367411af45c0d7953127 ---
+[22:08:08] [raw.payment_lookup] >> Resources: 0/1 (0.0%) | Time: 0.00s | Rate: 0.00/s
+[22:08:08] [raw.payment_lookup] >> Memory usage: 182.41 MB (77.10%) | CPU usage: 0.00%
+[22:08:08] [raw.payment_lookup] >> 
+[22:08:08] [raw.payment_lookup] >> --- Extract f2deebf6f5fd959649b654bab9e3f7a5eab9f3eb8d0c367411af45c0d7953127 ---
+[22:08:08] [raw.payment_lookup] >> Resources: 0/1 (0.0%) | Time: 0.01s | Rate: 0.00/s
+[22:08:08] [raw.payment_lookup] >> _dlt_pipeline_state: 1  | Time: 0.00s | Rate: 0.00/s
+[22:08:08] [raw.payment_lookup] >> Memory usage: 182.44 MB (77.10%) | CPU usage: 0.00%
+[22:08:08] [raw.payment_lookup] >> 
+[22:08:08] [raw.payment_lookup] >> --- Extract f2deebf6f5fd959649b654bab9e3f7a5eab9f3eb8d0c367411af45c0d7953127 ---
+[22:08:08] [raw.payment_lookup] >> Resources: 1/1 (100.0%) | Time: 0.03s | Rate: 36.62/s
+[22:08:08] [raw.payment_lookup] >> _dlt_pipeline_state: 1  | Time: 0.02s | Rate: 54.24/s
+[22:08:08] [raw.payment_lookup] >> Memory usage: 182.46 MB (77.10%) | CPU usage: 0.00%
+[22:08:08] [raw.payment_lookup] >> 
+[22:08:08] [raw.payment_lookup] >>  Normalize f2deebf6f5fd959649b654bab9e3f7a5eab9f3eb8d0c367411af45c0d7953127 in 1771884488.575568 
+[22:08:08] [raw.payment_lookup] >> Files: 0/2 (0.0%) | Time: 0.00s | Rate: 0.00/s
+[22:08:08] [raw.payment_lookup] >> Memory usage: 183.14 MB (77.10%) | CPU usage: 0.00%
+[22:08:08] [raw.payment_lookup] >> 
+[22:08:08] [raw.payment_lookup] >>  Normalize f2deebf6f5fd959649b654bab9e3f7a5eab9f3eb8d0c367411af45c0d7953127 in 1771884488.575568 
+[22:08:08] [raw.payment_lookup] >> Files: 0/2 (0.0%) | Time: 0.00s | Rate: 0.00/s
+[22:08:08] [raw.payment_lookup] >> Items: 0  | Time: 0.00s | Rate: 0.00/s
+[22:08:08] [raw.payment_lookup] >> Memory usage: 183.14 MB (77.10%) | CPU usage: 0.00%
+[22:08:08] [raw.payment_lookup] >> 
+[22:08:08] [raw.payment_lookup] >>  Normalize f2deebf6f5fd959649b654bab9e3f7a5eab9f3eb8d0c367411af45c0d7953127 in 1771884488.575568 
+[22:08:08] [raw.payment_lookup] >> Files: 2/2 (100.0%) | Time: 0.08s | Rate: 25.72/s
+[22:08:08] [raw.payment_lookup] >> Items: 8  | Time: 0.08s | Rate: 102.87/s
+[22:08:08] [raw.payment_lookup] >> Memory usage: 185.41 MB (77.10%) | CPU usage: 0.00%
+[22:08:08] [raw.payment_lookup] >> 
+[22:08:08] [raw.payment_lookup] >>  Load f2deebf6f5fd959649b654bab9e3f7a5eab9f3eb8d0c367411af45c0d7953127 in 1771884488.575568 
+[22:08:08] [raw.payment_lookup] >> Jobs: 0/2 (0.0%) | Time: 0.00s | Rate: 0.00/s
+[22:08:08] [raw.payment_lookup] >> Memory usage: 185.74 MB (77.10%) | CPU usage: 0.00%
+[22:08:08] [raw.payment_lookup] >> 
+[22:08:09] [raw.payment_lookup] >>  Load f2deebf6f5fd959649b654bab9e3f7a5eab9f3eb8d0c367411af45c0d7953127 in 1771884488.575568 
+[22:08:09] [raw.payment_lookup] >> Jobs: 2/2 (100.0%) | Time: 0.29s | Rate: 6.95/s
+[22:08:09] [raw.payment_lookup] >> Memory usage: 190.13 MB (77.20%) | CPU usage: 0.00%
+[22:08:09] [raw.payment_lookup] >> 
+[22:08:09] [raw.payment_lookup] >> Successfully finished loading data from 'csv' to 'duckdb' in 0.88 seconds 
+[22:08:09] [raw.payment_lookup] >> 
+[22:08:10] Finished: raw.payment_lookup (8.513s)
+
+==================================================
+
+PASS raw.taxi_zone_lookup 
+PASS ingestion.trips 
+PASS raw.payment_lookup 
+
+
+bruin run completed successfully in 8.513s
+
+ ✓ Assets executed      3 succeeded

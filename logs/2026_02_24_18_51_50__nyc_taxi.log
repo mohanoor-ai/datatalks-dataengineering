@@ -1,0 +1,96 @@
+
+Pipeline: nyc_taxi (..)
+  No issues found
+
+✓ Successfully validated 4 assets across 1 pipeline, all good.
+
+Interval: 2022-01-01T00:00:00Z - 2022-02-01T00:00:00Z
+
+Starting the pipeline execution...
+
+[18:51:50] Running:  ingestion.trips
+[18:51:50] Running:  ingestion.payment_lookup
+[18:51:51] [ingestion.trips] >> Installed 1 package in 748ms
+[18:51:53] [ingestion.trips] >> Traceback (most recent call last):
+[18:51:53] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Local\Temp\bruin-arrow-2867689023.py", line 19, in <module>
+[18:51:53] [ingestion.trips] >>     df = module.materialize()
+[18:51:53] [ingestion.trips] >>          ^^^^^^^^^^^^^^^^^^^^
+[18:51:53] [ingestion.trips] >> TypeError: materialize() missing 1 required positional argument: 'variables'
+[18:51:54] Failed: ingestion.trips (3.289s)
+[18:51:57] [ingestion.payment_lookup] >> 2026-02-24 18:51:57,673|[WARNING]|12228|17968|dlt|reference.py|__init__:76|When initializing destination factory of type dlt.destinations.duckdb, argument dest_table is not a valid field in DuckDbClientConfiguration or destination capabilities
+[18:51:57] [ingestion.payment_lookup] >> 2026-02-24 18:51:57,673|[WARNING]|12228|17968|dlt|reference.py|__init__:76|When initializing destination factory of type dlt.destinations.duckdb, argument staging_bucket is not a valid field in DuckDbClientConfiguration or destination capabilities
+[18:51:57] [ingestion.payment_lookup] >> 
+[18:51:57] [ingestion.payment_lookup] >> Initiated the pipeline with the following:
+[18:51:57] [ingestion.payment_lookup] >>   Source: csv / seed.raw
+[18:51:57] [ingestion.payment_lookup] >>   Destination: duckdb / ingestion.payment_lookup
+[18:51:57] [ingestion.payment_lookup] >>   Incremental Strategy: replace
+[18:51:57] [ingestion.payment_lookup] >>   Incremental Key: None
+[18:51:57] [ingestion.payment_lookup] >>   Primary Key: ['payment_type_id']
+[18:51:57] [ingestion.payment_lookup] >>   Pipeline ID: 60911f862bb3aa6c321ed19700e7b396fbf4c7d5cf89203ff59af8406408a265
+[18:51:57] [ingestion.payment_lookup] >> 
+[18:51:57] [ingestion.payment_lookup] >> 
+[18:51:57] [ingestion.payment_lookup] >> Starting the ingestion...
+[18:51:58] [ingestion.payment_lookup] >> --- Extract _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 ---
+[18:51:58] [ingestion.payment_lookup] >> Resources: 0/1 (0.0%) | Time: 0.00s | Rate: 0.00/s
+[18:51:58] [ingestion.payment_lookup] >> Memory usage: 186.71 MB (87.30%) | CPU usage: 0.00%
+[18:51:58] [ingestion.payment_lookup] >> 
+[18:51:58] [ingestion.payment_lookup] >> --- Extract _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 ---
+[18:51:58] [ingestion.payment_lookup] >> Resources: 0/1 (0.0%) | Time: 0.00s | Rate: 0.00/s
+[18:51:58] [ingestion.payment_lookup] >> payment_lookup: 7  | Time: 0.00s | Rate: 0.00/s
+[18:51:58] [ingestion.payment_lookup] >> Memory usage: 186.74 MB (87.30%) | CPU usage: 0.00%
+[18:51:58] [ingestion.payment_lookup] >> 
+[18:51:58] [ingestion.payment_lookup] >> --- Extract _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 ---
+[18:51:58] [ingestion.payment_lookup] >> Resources: 1/1 (100.0%) | Time: 0.02s | Rate: 42.30/s
+[18:51:58] [ingestion.payment_lookup] >> payment_lookup: 7  | Time: 0.02s | Rate: 344.05/s
+[18:51:58] [ingestion.payment_lookup] >> Memory usage: 186.75 MB (87.30%) | CPU usage: 0.00%
+[18:51:58] [ingestion.payment_lookup] >> 
+[18:51:58] [ingestion.payment_lookup] >>  Normalize _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 in 1771959117.9963012 
+[18:51:58] [ingestion.payment_lookup] >> Files: 0/1 (0.0%) | Time: 0.00s | Rate: 0.00/s
+[18:51:58] [ingestion.payment_lookup] >> Memory usage: 187.30 MB (87.40%) | CPU usage: 0.00%
+[18:51:58] [ingestion.payment_lookup] >> 
+[18:51:58] [ingestion.payment_lookup] >>  Normalize _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 in 1771959117.9963012 
+[18:51:58] [ingestion.payment_lookup] >> Files: 0/1 (0.0%) | Time: 0.00s | Rate: 0.00/s
+[18:51:58] [ingestion.payment_lookup] >> Items: 0  | Time: 0.00s | Rate: 0.00/s
+[18:51:58] [ingestion.payment_lookup] >> Memory usage: 187.31 MB (87.40%) | CPU usage: 0.00%
+[18:51:58] [ingestion.payment_lookup] >> 
+[18:51:58] [ingestion.payment_lookup] >>  Normalize _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 in 1771959117.9963012 
+[18:51:58] [ingestion.payment_lookup] >> Files: 1/1 (100.0%) | Time: 0.11s | Rate: 8.78/s
+[18:51:58] [ingestion.payment_lookup] >> Items: 7  | Time: 0.11s | Rate: 61.45/s
+[18:51:58] [ingestion.payment_lookup] >> Memory usage: 189.54 MB (87.40%) | CPU usage: 0.00%
+[18:51:58] [ingestion.payment_lookup] >> 
+[18:51:58] [ingestion.payment_lookup] >>  Load _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 in 1771959117.9963012 
+[18:51:58] [ingestion.payment_lookup] >> Jobs: 0/1 (0.0%) | Time: 0.00s | Rate: 0.00/s
+[18:51:58] [ingestion.payment_lookup] >> Memory usage: 189.87 MB (87.40%) | CPU usage: 0.00%
+[18:51:58] [ingestion.payment_lookup] >> 
+[18:51:58] [ingestion.payment_lookup] >>  Load _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 in 1771959117.9963012 
+[18:51:58] [ingestion.payment_lookup] >> Jobs: 1/1 (100.0%) | Time: 0.24s | Rate: 4.21/s
+[18:51:58] [ingestion.payment_lookup] >> Memory usage: 192.59 MB (87.50%) | CPU usage: 0.00%
+[18:51:58] [ingestion.payment_lookup] >> 
+[18:51:58] [ingestion.payment_lookup] >> Successfully finished loading data from 'csv' to 'duckdb' in 0.79 seconds 
+[18:51:58] [ingestion.payment_lookup] >> 
+[18:52:00] Finished: ingestion.payment_lookup (9.233s)
+[18:52:00] Running:  ingestion.payment_lookup:payment_type_name:not_null
+[18:52:00] Running:  ingestion.payment_lookup:payment_type_id:not_null
+[18:52:00] Running:  ingestion.payment_lookup:payment_type_id:unique
+[18:52:00] Finished: ingestion.payment_lookup:payment_type_name:not_null (43ms)
+[18:52:00] Finished: ingestion.payment_lookup:payment_type_id:unique (67ms)
+[18:52:00] Finished: ingestion.payment_lookup:payment_type_id:not_null (87ms)
+
+==================================================
+
+FAIL ingestion.trips 
+PASS ingestion.payment_lookup ...
+UPSTREAM FAILED reports.trips_report U
+UPSTREAM FAILED staging.trips 
+
+
+bruin run completed with failures in 9.321s
+
+ ✗ Assets executed      1 failed / 1 succeeded / 2 skipped
+ ✗ Quality checks       3 succeeded / 1 skipped
+
+
+1 assets failed
+└── ingestion.trips
+    └── failed to execute Python script: failed to run asset code: exit status 1
+

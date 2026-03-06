@@ -1,0 +1,218 @@
+
+Pipeline: nyc_taxi (..)
+  No issues found
+
+✓ Successfully validated 4 assets across 1 pipeline, all good.
+
+Interval: 2022-01-01T00:00:00Z - 2022-02-01T00:00:00Z
+
+Starting the pipeline execution...
+
+[18:55:15] Running:  ingestion.trips
+[18:55:15] Running:  ingestion.payment_lookup
+[18:55:16] [ingestion.trips] >> Installed 1 package in 461ms
+[18:55:18] [ingestion.trips] >> Downloading data from https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-01.parquet...
+[18:55:21] [ingestion.payment_lookup] >> 2026-02-24 18:55:21,388|[WARNING]|4260|25436|dlt|reference.py|__init__:76|When initializing destination factory of type dlt.destinations.duckdb, argument dest_table is not a valid field in DuckDbClientConfiguration or destination capabilities
+[18:55:21] [ingestion.payment_lookup] >> 2026-02-24 18:55:21,388|[WARNING]|4260|25436|dlt|reference.py|__init__:76|When initializing destination factory of type dlt.destinations.duckdb, argument staging_bucket is not a valid field in DuckDbClientConfiguration or destination capabilities
+[18:55:21] [ingestion.payment_lookup] >> 
+[18:55:21] [ingestion.payment_lookup] >> Initiated the pipeline with the following:
+[18:55:21] [ingestion.payment_lookup] >>   Source: csv / seed.raw
+[18:55:21] [ingestion.payment_lookup] >>   Destination: duckdb / ingestion.payment_lookup
+[18:55:21] [ingestion.payment_lookup] >>   Incremental Strategy: replace
+[18:55:21] [ingestion.payment_lookup] >>   Incremental Key: None
+[18:55:21] [ingestion.payment_lookup] >>   Primary Key: ['payment_type_id']
+[18:55:21] [ingestion.payment_lookup] >>   Pipeline ID: 60911f862bb3aa6c321ed19700e7b396fbf4c7d5cf89203ff59af8406408a265
+[18:55:21] [ingestion.payment_lookup] >> 
+[18:55:21] [ingestion.payment_lookup] >> 
+[18:55:21] [ingestion.payment_lookup] >> Starting the ingestion...
+[18:55:21] [ingestion.payment_lookup] >> --- Extract _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 ---
+[18:55:21] [ingestion.payment_lookup] >> Resources: 0/1 (0.0%) | Time: 0.00s | Rate: 0.00/s
+[18:55:21] [ingestion.payment_lookup] >> Memory usage: 185.36 MB (86.90%) | CPU usage: 0.00%
+[18:55:21] [ingestion.payment_lookup] >> 
+[18:55:21] [ingestion.payment_lookup] >> --- Extract _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 ---
+[18:55:21] [ingestion.payment_lookup] >> Resources: 0/1 (0.0%) | Time: 0.00s | Rate: 0.00/s
+[18:55:21] [ingestion.payment_lookup] >> payment_lookup: 7  | Time: 0.00s | Rate: 0.00/s
+[18:55:21] [ingestion.payment_lookup] >> Memory usage: 185.39 MB (86.90%) | CPU usage: 0.00%
+[18:55:21] [ingestion.payment_lookup] >> 
+[18:55:21] [ingestion.payment_lookup] >> --- Extract _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 ---
+[18:55:21] [ingestion.payment_lookup] >> Resources: 1/1 (100.0%) | Time: 0.02s | Rate: 46.20/s
+[18:55:21] [ingestion.payment_lookup] >> payment_lookup: 7  | Time: 0.02s | Rate: 406.68/s
+[18:55:21] [ingestion.payment_lookup] >> Memory usage: 186.11 MB (87.00%) | CPU usage: 0.00%
+[18:55:21] [ingestion.payment_lookup] >> 
+[18:55:21] [ingestion.payment_lookup] >>  Normalize _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 in 1771959321.6821666 
+[18:55:21] [ingestion.payment_lookup] >> Files: 0/1 (0.0%) | Time: 0.00s | Rate: 0.00/s
+[18:55:21] [ingestion.payment_lookup] >> Memory usage: 186.51 MB (87.00%) | CPU usage: 0.00%
+[18:55:21] [ingestion.payment_lookup] >> 
+[18:55:21] [ingestion.payment_lookup] >>  Normalize _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 in 1771959321.6821666 
+[18:55:21] [ingestion.payment_lookup] >> Files: 0/1 (0.0%) | Time: 0.00s | Rate: 0.00/s
+[18:55:21] [ingestion.payment_lookup] >> Items: 0  | Time: 0.00s | Rate: 0.00/s
+[18:55:21] [ingestion.payment_lookup] >> Memory usage: 186.51 MB (87.00%) | CPU usage: 0.00%
+[18:55:21] [ingestion.payment_lookup] >> 
+[18:55:21] [ingestion.payment_lookup] >>  Normalize _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 in 1771959321.6821666 
+[18:55:21] [ingestion.payment_lookup] >> Files: 1/1 (100.0%) | Time: 0.04s | Rate: 25.52/s
+[18:55:21] [ingestion.payment_lookup] >> Items: 7  | Time: 0.04s | Rate: 178.64/s
+[18:55:21] [ingestion.payment_lookup] >> Memory usage: 188.50 MB (87.00%) | CPU usage: 0.00%
+[18:55:21] [ingestion.payment_lookup] >> 
+[18:55:21] [ingestion.payment_lookup] >>  Load _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 in 1771959321.6821666 
+[18:55:21] [ingestion.payment_lookup] >> Jobs: 0/1 (0.0%) | Time: 0.00s | Rate: 0.00/s
+[18:55:21] [ingestion.payment_lookup] >> Memory usage: 188.89 MB (87.10%) | CPU usage: 0.00%
+[18:55:21] [ingestion.payment_lookup] >> 
+[18:55:22] [ingestion.payment_lookup] >>  Load _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 in 1771959321.6821666 
+[18:55:22] [ingestion.payment_lookup] >> Jobs: 1/1 (100.0%) | Time: 0.25s | Rate: 4.07/s
+[18:55:22] [ingestion.payment_lookup] >> Memory usage: 192.30 MB (87.20%) | CPU usage: 0.00%
+[18:55:22] [ingestion.payment_lookup] >> 
+[18:55:22] [ingestion.payment_lookup] >> Successfully finished loading data from 'csv' to 'duckdb' in 0.68 seconds 
+[18:55:22] [ingestion.payment_lookup] >> 
+[18:55:24] Finished: ingestion.payment_lookup (8.779s)
+[18:55:24] Running:  ingestion.payment_lookup:payment_type_name:not_null
+[18:55:24] Running:  ingestion.payment_lookup:payment_type_id:not_null
+[18:55:24] Running:  ingestion.payment_lookup:payment_type_id:unique
+[18:55:24] Finished: ingestion.payment_lookup:payment_type_name:not_null (36ms)
+[18:55:24] Finished: ingestion.payment_lookup:payment_type_id:not_null (103ms)
+[18:55:24] Finished: ingestion.payment_lookup:payment_type_id:unique (139ms)
+[18:55:26] [ingestion.trips] >> Returning DataFrame with 5000 rows to Bruin.
+[18:55:26] [ingestion.trips] Successfully collected the data from the asset, uploading to the destination...
+[18:55:31] [ingestion.trips] >> 2026-02-24 18:55:31,288|[WARNING]|25200|21040|dlt|reference.py|__init__:76|When initializing destination factory of type dlt.destinations.duckdb, argument dest_table is not a valid field in DuckDbClientConfiguration or destination capabilities
+[18:55:31] [ingestion.trips] >> 2026-02-24 18:55:31,288|[WARNING]|25200|21040|dlt|reference.py|__init__:76|When initializing destination factory of type dlt.destinations.duckdb, argument staging_bucket is not a valid field in DuckDbClientConfiguration or destination capabilities
+[18:55:31] [ingestion.trips] >> 
+[18:55:31] [ingestion.trips] >> Initiated the pipeline with the following:
+[18:55:31] [ingestion.trips] >>   Source: mmap / asset_data
+[18:55:31] [ingestion.trips] >>   Destination: duckdb / ingestion.trips
+[18:55:31] [ingestion.trips] >>   Incremental Strategy: replace
+[18:55:31] [ingestion.trips] >>   Incremental Key: None
+[18:55:31] [ingestion.trips] >>   Primary Key: None
+[18:55:31] [ingestion.trips] >>   Pipeline ID: 1c640cda117b412bfd31f8d0ccfbc1825fdd42b287add7c24115163f8e9aced4
+[18:55:31] [ingestion.trips] >> 
+[18:55:31] [ingestion.trips] >> 
+[18:55:31] [ingestion.trips] >> Starting the ingestion...
+[18:55:31] [ingestion.trips] >> Traceback (most recent call last):
+[18:55:31] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\dlt\pipeline\pipeline.py", line 484, in extract
+[18:55:31] [ingestion.trips] >>     self._extract_source(
+[18:55:31] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\dlt\pipeline\pipeline.py", line 1345, in _extract_source
+[18:55:31] [ingestion.trips] >>     load_id = extract.extract(
+[18:55:31] [ingestion.trips] >>               ^^^^^^^^^^^^^^^^
+[18:55:31] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\dlt\extract\extract.py", line 487, in extract
+[18:55:31] [ingestion.trips] >>     self._extract_single_source(
+[18:55:31] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\dlt\extract\extract.py", line 417, in _extract_single_source
+[18:55:31] [ingestion.trips] >>     extractors[item_format].write_items(
+[18:55:31] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\dlt\extract\extractors.py", line 365, in write_items
+[18:55:31] [ingestion.trips] >>     super().write_items(resource, items, meta)
+[18:55:31] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\dlt\extract\extractors.py", line 152, in write_items
+[18:55:31] [ingestion.trips] >>     self._write_to_static_table(resource, table_name, items, meta)
+[18:55:31] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\dlt\extract\extractors.py", line 372, in _write_to_static_table
+[18:55:31] [ingestion.trips] >>     super()._write_to_static_table(resource, table_name, items, meta)
+[18:55:31] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\dlt\extract\extractors.py", line 237, in _write_to_static_table
+[18:55:31] [ingestion.trips] >>     self._write_item(table_name, resource.name, items)
+[18:55:31] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\dlt\extract\extractors.py", line 418, in _write_item
+[18:55:31] [ingestion.trips] >>     items = [
+[18:55:31] [ingestion.trips] >>             ^
+[18:55:31] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\dlt\extract\extractors.py", line 419, in <listcomp>
+[18:55:31] [ingestion.trips] >>     pyarrow.normalize_py_arrow_item(
+[18:55:31] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\dlt\common\libs\pyarrow.py", line 591, in normalize_py_arrow_item
+[18:55:31] [ingestion.trips] >>     new_type, new_arrow_column = normalize_py_arrow_item_column(
+[18:55:31] [ingestion.trips] >>                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[18:55:31] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\dlt\common\libs\pyarrow.py", line 657, in normalize_py_arrow_item_column
+[18:55:31] [ingestion.trips] >>     col = pyarrow.compute.assume_timezone(
+[18:55:31] [ingestion.trips] >>           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[18:55:31] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\pyarrow\compute.py", line 264, in wrapper
+[18:55:31] [ingestion.trips] >>     return func.call(args, options, memory_pool)
+[18:55:31] [ingestion.trips] >>            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[18:55:31] [ingestion.trips] >>   File "pyarrow\\_compute.pyx", line 393, in pyarrow._compute.Function.call
+[18:55:31] [ingestion.trips] >>   File "pyarrow\\error.pxi", line 155, in pyarrow.lib.pyarrow_internal_check_status
+[18:55:31] [ingestion.trips] >>   File "pyarrow\\error.pxi", line 92, in pyarrow.lib.check_status
+[18:55:31] [ingestion.trips] >> pyarrow.lib.ArrowInvalid: Cannot locate timezone 'UTC': Timezone database not found at "C:\Users\moha_\Downloads\tzdata"
+[18:55:31] [ingestion.trips] >> 
+[18:55:31] [ingestion.trips] >> The above exception was the direct cause of the following exception:
+[18:55:31] [ingestion.trips] >> 
+[18:55:31] [ingestion.trips] >> Traceback (most recent call last):
+[18:55:31] [ingestion.trips] >>   File "<frozen runpy>", line 198, in _run_module_as_main
+[18:55:31] [ingestion.trips] >>   File "<frozen runpy>", line 88, in _run_code
+[18:55:31] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Scripts\ingestr.exe\__main__.py", line 10, in <module>
+[18:55:31] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\ingestr\main.py", line 849, in main
+[18:55:31] [ingestion.trips] >>     app()
+[18:55:31] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\typer\main.py", line 342, in __call__
+[18:55:31] [ingestion.trips] >>     raise e
+[18:55:31] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\typer\main.py", line 325, in __call__
+[18:55:31] [ingestion.trips] >>     return get_command(self)(*args, **kwargs)
+[18:55:31] [ingestion.trips] >>            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[18:55:31] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\click\core.py", line 1161, in __call__
+[18:55:31] [ingestion.trips] >>     return self.main(*args, **kwargs)
+[18:55:31] [ingestion.trips] >>            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[18:55:31] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\typer\core.py", line 738, in main
+[18:55:31] [ingestion.trips] >>     return _main(
+[18:55:31] [ingestion.trips] >>            ^^^^^^
+[18:55:31] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\typer\core.py", line 197, in _main
+[18:55:31] [ingestion.trips] >>     rv = self.invoke(ctx)
+[18:55:31] [ingestion.trips] >>          ^^^^^^^^^^^^^^^^
+[18:55:31] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\click\core.py", line 1697, in invoke
+[18:55:31] [ingestion.trips] >>     return _process_result(sub_ctx.command.invoke(sub_ctx))
+[18:55:31] [ingestion.trips] >>                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[18:55:31] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\click\core.py", line 1443, in invoke
+[18:55:31] [ingestion.trips] >>     return ctx.invoke(self.callback, **ctx.params)
+[18:55:31] [ingestion.trips] >>            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[18:55:31] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\click\core.py", line 788, in invoke
+[18:55:31] [ingestion.trips] >>     return __callback(*args, **kwargs)
+[18:55:31] [ingestion.trips] >>            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[18:55:31] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\typer\main.py", line 707, in wrapper
+[18:55:31] [ingestion.trips] >>     return callback(**use_params)
+[18:55:31] [ingestion.trips] >>            ^^^^^^^^^^^^^^^^^^^^^^
+[18:55:31] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\ingestr\main.py", line 704, in ingest
+[18:55:31] [ingestion.trips] >>     run_info: LoadInfo = run_pipeline()
+[18:55:31] [ingestion.trips] >>                          ^^^^^^^^^^^^^^
+[18:55:31] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\ingestr\main.py", line 672, in run_pipeline
+[18:55:31] [ingestion.trips] >>     return pipeline.run(
+[18:55:31] [ingestion.trips] >>            ^^^^^^^^^^^^^
+[18:55:31] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\dlt\pipeline\pipeline.py", line 224, in _wrap
+[18:55:31] [ingestion.trips] >>     step_info = f(self, *args, **kwargs)
+[18:55:31] [ingestion.trips] >>                 ^^^^^^^^^^^^^^^^^^^^^^^^
+[18:55:31] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\dlt\pipeline\pipeline.py", line 272, in _wrap
+[18:55:31] [ingestion.trips] >>     return f(self, *args, **kwargs)
+[18:55:31] [ingestion.trips] >>            ^^^^^^^^^^^^^^^^^^^^^^^^
+[18:55:31] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\dlt\pipeline\pipeline.py", line 748, in run
+[18:55:31] [ingestion.trips] >>     self.extract(
+[18:55:31] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\dlt\pipeline\pipeline.py", line 224, in _wrap
+[18:55:31] [ingestion.trips] >>     step_info = f(self, *args, **kwargs)
+[18:55:31] [ingestion.trips] >>                 ^^^^^^^^^^^^^^^^^^^^^^^^
+[18:55:31] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\dlt\pipeline\pipeline.py", line 178, in _wrap
+[18:55:31] [ingestion.trips] >>     rv = f(self, *args, **kwargs)
+[18:55:31] [ingestion.trips] >>          ^^^^^^^^^^^^^^^^^^^^^^^^
+[18:55:31] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\dlt\pipeline\pipeline.py", line 164, in _wrap
+[18:55:31] [ingestion.trips] >>     return f(self, *args, **kwargs)
+[18:55:31] [ingestion.trips] >>            ^^^^^^^^^^^^^^^^^^^^^^^^
+[18:55:31] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\dlt\pipeline\pipeline.py", line 272, in _wrap
+[18:55:31] [ingestion.trips] >>     return f(self, *args, **kwargs)
+[18:55:31] [ingestion.trips] >>            ^^^^^^^^^^^^^^^^^^^^^^^^
+[18:55:31] [ingestion.trips] >>   File "C:\Users\moha_\AppData\Roaming\uv\tools\ingestr\Lib\site-packages\dlt\pipeline\pipeline.py", line 507, in extract
+[18:55:31] [ingestion.trips] >>     raise PipelineStepFailed(
+[18:55:31] [ingestion.trips] >> dlt.pipeline.exceptions.PipelineStepFailed: Pipeline execution failed at `step=extract` when processing package with `load_id=1771959331.446008` with exception:
+[18:55:31] [ingestion.trips] >> 
+[18:55:31] [ingestion.trips] >> <class 'pyarrow.lib.ArrowInvalid'>
+[18:55:31] [ingestion.trips] >> Cannot locate timezone 'UTC': Timezone database not found at "C:\Users\moha_\Downloads\tzdata"
+[18:55:32] [ingestion.trips] >> --- Extract _1c640cda117b412bfd31f8d0ccfbdalikqd42b287add7c24115163f8e9aced4 ---
+[18:55:32] [ingestion.trips] >> Resources: 0/1 (0.0%) | Time: 0.00s | Rate: 0.00/s
+[18:55:32] [ingestion.trips] >> Memory usage: 181.87 MB (87.00%) | CPU usage: 0.00%
+[18:55:32] [ingestion.trips] >> 
+[18:55:32] [ingestion.trips] >> --- Extract _1c640cda117b412bfd31f8d0ccfbdalikqd42b287add7c24115163f8e9aced4 ---
+[18:55:32] [ingestion.trips] >> Resources: 0/1 (0.0%) | Time: 0.03s | Rate: 0.00/s
+[18:55:32] [ingestion.trips] >> Memory usage: 184.42 MB (87.00%) | CPU usage: 0.00%
+[18:55:32] [ingestion.trips] >> 
+[18:55:33] Failed: ingestion.trips (17.328s)
+
+==================================================
+
+PASS ingestion.payment_lookup ...
+FAIL ingestion.trips 
+UPSTREAM FAILED reports.trips_report U
+UPSTREAM FAILED staging.trips 
+
+
+bruin run completed with failures in 17.328s
+
+ ✗ Assets executed      1 failed / 1 succeeded / 2 skipped
+ ✗ Quality checks       3 succeeded / 1 skipped
+
+
+1 assets failed
+└── ingestion.trips
+    └── failed to execute Python script: failed to run load the data into the destination: exit status 1
+

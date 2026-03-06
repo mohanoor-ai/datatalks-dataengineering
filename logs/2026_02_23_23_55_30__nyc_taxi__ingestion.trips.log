@@ -1,0 +1,33 @@
+
+Pipeline: nyc_taxi (..\..\..)
+  No issues found
+
+✓ Successfully validated 4 assets across 1 pipeline, all good.
+
+Interval: 2026-02-22T00:00:00Z - 2026-02-22T23:59:59Z
+
+Starting the pipeline execution...
+
+[23:55:30] Running:  ingestion.trips
+[23:55:31] >> Traceback (most recent call last):
+[23:55:31] >>   File "<frozen runpy>", line 198, in _run_module_as_main
+[23:55:31] >>   File "<frozen runpy>", line 88, in _run_code
+[23:55:31] >>   File "C:\Users\moha_\OneDrive\Documents\datatalks\DataEng\pipeline\assets\ingestion\trips.py", line 6, in <module>
+[23:55:31] >>     import duckdb
+[23:55:31] >> ModuleNotFoundError: No module named 'duckdb'
+[23:55:31] Failed: ingestion.trips (846ms)
+
+==================================================
+
+FAIL ingestion.trips 
+
+
+bruin run completed with failures in 846ms
+
+ ✗ Assets executed      1 failed
+
+
+1 assets failed
+└── ingestion.trips
+    └── failed to execute Python script: exit status 1
+

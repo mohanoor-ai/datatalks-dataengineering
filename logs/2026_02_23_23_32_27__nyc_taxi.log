@@ -1,0 +1,110 @@
+
+Pipeline: nyc_taxi (..)
+  No issues found
+
+✓ Successfully validated 4 assets across 1 pipeline, all good.
+
+Interval: 2022-01-01T00:00:00Z - 2026-02-22T23:59:59Z
+
+Starting the pipeline execution...
+
+[23:32:27] Running:  ingestion.trips
+[23:32:27] Running:  ingestion.payment_lookup
+[23:32:28] Finished: ingestion.trips (940ms)
+[23:32:30] [ingestion.payment_lookup] >> 2026-02-23 23:32:30,959|[WARNING]|29336|31808|dlt|reference.py|__init__:76|When initializing destination factory of type dlt.destinations.duckdb, argument dest_table is not a valid field in DuckDbClientConfiguration or destination capabilities
+[23:32:30] [ingestion.payment_lookup] >> 2026-02-23 23:32:30,959|[WARNING]|29336|31808|dlt|reference.py|__init__:76|When initializing destination factory of type dlt.destinations.duckdb, argument staging_bucket is not a valid field in DuckDbClientConfiguration or destination capabilities
+[23:32:30] [ingestion.payment_lookup] >> 
+[23:32:30] [ingestion.payment_lookup] >> Initiated the pipeline with the following:
+[23:32:30] [ingestion.payment_lookup] >>   Source: csv / seed.raw
+[23:32:30] [ingestion.payment_lookup] >>   Destination: duckdb / ingestion.payment_lookup
+[23:32:30] [ingestion.payment_lookup] >>   Incremental Strategy: replace
+[23:32:30] [ingestion.payment_lookup] >>   Incremental Key: None
+[23:32:30] [ingestion.payment_lookup] >>   Primary Key: ['payment_type_id']
+[23:32:30] [ingestion.payment_lookup] >>   Pipeline ID: 60911f862bb3aa6c321ed19700e7b396fbf4c7d5cf89203ff59af8406408a265
+[23:32:30] [ingestion.payment_lookup] >> 
+[23:32:30] [ingestion.payment_lookup] >> 
+[23:32:30] [ingestion.payment_lookup] >> Starting the ingestion...
+[23:32:31] [ingestion.payment_lookup] >> --- Extract _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 ---
+[23:32:31] [ingestion.payment_lookup] >> Resources: 0/1 (0.0%) | Time: 0.00s | Rate: 0.00/s
+[23:32:31] [ingestion.payment_lookup] >> Memory usage: 180.10 MB (83.50%) | CPU usage: 0.00%
+[23:32:31] [ingestion.payment_lookup] >> 
+[23:32:31] [ingestion.payment_lookup] >> --- Extract _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 ---
+[23:32:31] [ingestion.payment_lookup] >> Resources: 0/1 (0.0%) | Time: 0.00s | Rate: 0.00/s
+[23:32:31] [ingestion.payment_lookup] >> payment_lookup: 7  | Time: 0.00s | Rate: 0.00/s
+[23:32:31] [ingestion.payment_lookup] >> Memory usage: 180.20 MB (83.50%) | CPU usage: 0.00%
+[23:32:31] [ingestion.payment_lookup] >> 
+[23:32:31] [ingestion.payment_lookup] >> --- Extract _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 ---
+[23:32:31] [ingestion.payment_lookup] >> Resources: 1/1 (100.0%) | Time: 0.03s | Rate: 32.83/s
+[23:32:31] [ingestion.payment_lookup] >> payment_lookup: 7  | Time: 0.03s | Rate: 256.53/s
+[23:32:31] [ingestion.payment_lookup] >> Memory usage: 180.27 MB (83.50%) | CPU usage: 0.00%
+[23:32:31] [ingestion.payment_lookup] >> 
+[23:32:31] [ingestion.payment_lookup] >> --- Extract _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 ---
+[23:32:31] [ingestion.payment_lookup] >> Resources: 0/1 (0.0%) | Time: 0.00s | Rate: 0.00/s
+[23:32:31] [ingestion.payment_lookup] >> Memory usage: 180.39 MB (83.50%) | CPU usage: 0.00%
+[23:32:31] [ingestion.payment_lookup] >> 
+[23:32:31] [ingestion.payment_lookup] >> --- Extract _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 ---
+[23:32:31] [ingestion.payment_lookup] >> Resources: 0/1 (0.0%) | Time: 0.00s | Rate: 0.00/s
+[23:32:31] [ingestion.payment_lookup] >> _dlt_pipeline_state: 1  | Time: 0.00s | Rate: 0.00/s
+[23:32:31] [ingestion.payment_lookup] >> Memory usage: 180.43 MB (83.50%) | CPU usage: 0.00%
+[23:32:31] [ingestion.payment_lookup] >> 
+[23:32:31] [ingestion.payment_lookup] >> --- Extract _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 ---
+[23:32:31] [ingestion.payment_lookup] >> Resources: 1/1 (100.0%) | Time: 0.02s | Rate: 47.44/s
+[23:32:31] [ingestion.payment_lookup] >> _dlt_pipeline_state: 1  | Time: 0.02s | Rate: 55.32/s
+[23:32:31] [ingestion.payment_lookup] >> Memory usage: 180.44 MB (83.50%) | CPU usage: 0.00%
+[23:32:31] [ingestion.payment_lookup] >> 
+[23:32:31] [ingestion.payment_lookup] >>  Normalize _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 in 1771889551.122858 
+[23:32:31] [ingestion.payment_lookup] >> Files: 0/2 (0.0%) | Time: 0.00s | Rate: 0.00/s
+[23:32:31] [ingestion.payment_lookup] >> Memory usage: 181.28 MB (83.50%) | CPU usage: 0.00%
+[23:32:31] [ingestion.payment_lookup] >> 
+[23:32:31] [ingestion.payment_lookup] >>  Normalize _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 in 1771889551.122858 
+[23:32:31] [ingestion.payment_lookup] >> Files: 0/2 (0.0%) | Time: 0.00s | Rate: 0.00/s
+[23:32:31] [ingestion.payment_lookup] >> Items: 0  | Time: 0.00s | Rate: 0.00/s
+[23:32:31] [ingestion.payment_lookup] >> Memory usage: 181.28 MB (83.50%) | CPU usage: 0.00%
+[23:32:31] [ingestion.payment_lookup] >> 
+[23:32:31] [ingestion.payment_lookup] >>  Normalize _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 in 1771889551.122858 
+[23:32:31] [ingestion.payment_lookup] >> Files: 2/2 (100.0%) | Time: 0.04s | Rate: 54.63/s
+[23:32:31] [ingestion.payment_lookup] >> Items: 8  | Time: 0.04s | Rate: 224.67/s
+[23:32:31] [ingestion.payment_lookup] >> Memory usage: 184.88 MB (83.50%) | CPU usage: 0.00%
+[23:32:31] [ingestion.payment_lookup] >> 
+[23:32:31] [ingestion.payment_lookup] >>  Load _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 in 1771889551.122858 
+[23:32:31] [ingestion.payment_lookup] >> Jobs: 0/2 (0.0%) | Time: 0.00s | Rate: 0.00/s
+[23:32:31] [ingestion.payment_lookup] >> Memory usage: 185.31 MB (83.50%) | CPU usage: 0.00%
+[23:32:31] [ingestion.payment_lookup] >> 
+[23:32:31] [ingestion.payment_lookup] >>  Load _60911f862bb3aa6c321ed19700e7tsjyxa4c7d5cf89203ff59af8406408a265 in 1771889551.122858 
+[23:32:31] [ingestion.payment_lookup] >> Jobs: 2/2 (100.0%) | Time: 0.14s | Rate: 13.80/s
+[23:32:31] [ingestion.payment_lookup] >> Memory usage: 190.55 MB (83.60%) | CPU usage: 0.00%
+[23:32:31] [ingestion.payment_lookup] >> 
+[23:32:31] [ingestion.payment_lookup] >> Successfully finished loading data from 'csv' to 'duckdb' in 0.47 seconds 
+[23:32:31] [ingestion.payment_lookup] >> 
+[23:32:32] Finished: ingestion.payment_lookup (4.86s)
+[23:32:32] Running:  ingestion.payment_lookup:payment_type_name:not_null
+[23:32:32] Running:  ingestion.payment_lookup:payment_type_id:not_null
+[23:32:32] Running:  ingestion.payment_lookup:payment_type_id:unique
+[23:32:32] Finished: ingestion.payment_lookup:payment_type_name:not_null (17ms)
+[23:32:32] Finished: ingestion.payment_lookup:payment_type_id:not_null (34ms)
+[23:32:32] Finished: ingestion.payment_lookup:payment_type_id:unique (54ms)
+[23:32:32] Running:  staging.trips
+[23:32:32] Failed: staging.trips (42ms)
+
+==================================================
+
+PASS ingestion.trips 
+PASS ingestion.payment_lookup ...
+FAIL staging.trips UU
+UPSTREAM FAILED reports.trips_report U
+
+
+bruin run completed with failures in 4.956s
+
+ ✗ Assets executed      1 failed / 2 succeeded / 1 skipped
+ ✗ Quality checks       3 succeeded / 3 skipped
+
+
+1 assets failed
+└── staging.trips
+    └── Internal: Catalog Error: Table with name trips does not exist!
+        Did you mean "_dlt_version"?
+        
+        LINE 11: LEFT JOIN ingestion.payment_lookup p
+                 ^
+

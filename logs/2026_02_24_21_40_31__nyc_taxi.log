@@ -1,0 +1,7 @@
+
+Pipeline: nyc_taxi (..)
+  reports.trips_report (assets\reports\trips_report.sql)
+    └── Materialization strategy 'replace' is not supported, available strategies are: [create+replace delete+insert truncate+insert append merge time_interval ddl scd2_by_time scd2_by_column] (materialization-config)
+
+
+✘ Checked 1 pipeline and found 1 issue, please check above.
